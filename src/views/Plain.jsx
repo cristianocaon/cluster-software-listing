@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Plain() {
+function Plain({ data, partition }) {
   const classes = useStyles();
 
   const [rows, setRows] = useState([]);

@@ -19,6 +19,7 @@ function App() {
   const [data, setData] = useState();
   const [partitions, setPartitions] = useState();
   const [headerValue, setHeaderValue] = useState(0);
+  const [partitionValue, setPartitionValue] = useState('matador');
   const [contentValue, setContentValue] = useState('STACK');
 
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
 
   const handleHeaderChange = (event, newValue) => {
     setHeaderValue(newValue);
+    setPartitionValue(partitions[newValue]);
   };
 
   const handleContentChange = (event) => {
@@ -41,7 +43,7 @@ function App() {
     <div className={classes.root}>
       <ModeButton handleChange={handleContentChange} />
       <Header value={headerValue} partitions={partitions} handleChange={handleHeaderChange} />
-      <Content value={contentValue} />
+      <Content value={contentValue} data={data} partition={partitionValue} />
     </div>
   );
 }
