@@ -1,0 +1,835 @@
+{
+    "matador": {
+        "info": "Adds modules for RedRaider Software Stack for Intel Cascadelake / Nvidia V100 Applications to MODULEPATH. ",
+        "versions": {
+            "0.15.4": {
+                "child": {
+                    "cmake": {
+                        "info": "A cross-platform, open-source build system. CMake is a family of tools designed to build, test and package software.",
+                        "versions": {
+                            "3.17.3": {
+                                "child": {},
+                                "module_name": "cmake/3.17.3",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/Core/cmake/3.17.3.lua",
+                                "version_no": "3.17.3"
+                            }
+                        }
+                    },
+                    "gcc": {
+                        "info": "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.",
+                        "versions": {
+                            "10.1.0": {
+                                "child": {
+                                    "nvhpc": {
+                                        "info": "The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and tools essential to maximizing developer productivity and the performance and portability of HPC applications. The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA. GPU-accelerated math libraries maximize performance on common HPC algorithms, and optimized communications libraries enable standards-based multi-GPU and scalable systems programming. Performance profiling and debugging tools simplify porting and optimization of HPC applications.",
+                                        "versions": {
+                                            "21.3": {
+                                                "child": {},
+                                                "module_name": "nvhpc/21.3-mpi",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/10.1.0/nvhpc/21.3-mpi.lua",
+                                                "version_no": "21.3"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "",
+                                "path": "",
+                                "version_no": ""
+                            },
+                            "8.4.0": {
+                                "child": {
+                                    "cuda": {
+                                        "info": "CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU). Note: This package does not currently install the drivers necessary to run CUDA. These will need to be installed manually. See: https://docs.nvidia.com/cuda/ for details.",
+                                        "versions": {
+                                            "10.2.89": {
+                                                "child": {},
+                                                "module_name": "cuda/10.2.89",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/cuda/10.2.89.lua",
+                                                "version_no": "10.2.89"
+                                            }
+                                        }
+                                    },
+                                    "cudnn": {
+                                        "info": "NVIDIA cuDNN is a GPU-accelerated library of primitives for deep neural networks",
+                                        "versions": {
+                                            "7.6.5.32-10.2-linux-x64": {
+                                                "child": {},
+                                                "module_name": "cudnn/7.6.5.32-10.2-linux-x64-cuda",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/cudnn/7.6.5.32-10.2-linux-x64-cuda.lua",
+                                                "version_no": "7.6.5.32-10.2-linux-x64"
+                                            }
+                                        }
+                                    },
+                                    "nccl": {
+                                        "info": "Optimized primitives for collective multi-GPU communication.",
+                                        "versions": {
+                                            "2.7.3-1": {
+                                                "child": {},
+                                                "module_name": "nccl/2.7.3-1-cuda",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/nccl/2.7.3-1-cuda.lua",
+                                                "version_no": "2.7.3-1"
+                                            }
+                                        }
+                                    },
+                                    "openmpi": {
+                                        "info": "An open source Message Passing Interface implementation. The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.",
+                                        "versions": {
+                                            "4.0.4": {
+                                                "child": {},
+                                                "module_name": "openmpi/4.0.4-cuda",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/openmpi/4.0.4-cuda.lua",
+                                                "version_no": "4.0.4"
+                                            },
+                                            "4.0.4-cuda": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-cuda-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/openmpi/4.0.4-6vx3opa/gcc/8.4.0/hdf5/1.10.6-cuda-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "parallel-netcdf": {
+                                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                                        "versions": {
+                                                            "1.12.1": {
+                                                                "child": {},
+                                                                "module_name": "parallel-netcdf/1.12.1-cuda",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/openmpi/4.0.4-6vx3opa/gcc/8.4.0/parallel-netcdf/1.12.1-cuda.lua",
+                                                                "version_no": "1.12.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "",
+                                                "path": "",
+                                                "version_no": ""
+                                            }
+                                        }
+                                    },
+                                    "py-setuptools": {
+                                        "info": "A Python utility that aids in the process of downloading, building, upgrading, installing, and uninstalling Python packages.",
+                                        "versions": {
+                                            "46.1.3": {
+                                                "child": {},
+                                                "module_name": "py-setuptools/46.1.3",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/py-setuptools/46.1.3.lua",
+                                                "version_no": "46.1.3"
+                                            }
+                                        }
+                                    },
+                                    "py-termcolor": {
+                                        "info": "ANSII Color formatting for output in terminal.",
+                                        "versions": {
+                                            "1.1.0": {
+                                                "child": {},
+                                                "module_name": "py-termcolor/1.1.0",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/py-termcolor/1.1.0.lua",
+                                                "version_no": "1.1.0"
+                                            }
+                                        }
+                                    },
+                                    "swig": {
+                                        "info": "SWIG is an interface compiler that connects programs written in C and C++ with scripting languages such as Perl, Python, Ruby, and Tcl. It works by taking the declarations found in C/C++ header files and using them to generate the wrapper code that scripting languages need to access the underlying C/C++ code. In addition, SWIG provides a variety of customization features that let you tailor the wrapping process to suit your application.",
+                                        "versions": {
+                                            "4.0.1": {
+                                                "child": {},
+                                                "module_name": "swig/4.0.1",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/8.4.0/swig/4.0.1.lua",
+                                                "version_no": "4.0.1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "",
+                                "path": "",
+                                "version_no": ""
+                            },
+                            "9.3.0": {
+                                "child": {
+                                    "cuda": {
+                                        "info": "CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU). Note: This package does not currently install the drivers necessary to run CUDA. These will need to be installed manually. See: https://docs.nvidia.com/cuda/ for details.",
+                                        "versions": {
+                                            "11.0": {
+                                                "child": {},
+                                                "module_name": "cuda/11.0",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/cuda/11.0.lua",
+                                                "version_no": "11.0"
+                                            }
+                                        }
+                                    },
+                                    "cudnn": {
+                                        "info": "NVIDIA cuDNN is a GPU-accelerated library of primitives for deep neural networks",
+                                        "versions": {
+                                            "8.0.1.13-1.cuda11.0": {
+                                                "child": {},
+                                                "module_name": "cudnn/8.0.1.13-1.cuda11.0",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/cudnn/8.0.1.13-1.cuda11.0.lua",
+                                                "version_no": "8.0.1.13-1.cuda11.0"
+                                            }
+                                        }
+                                    },
+                                    "nvhpc": {
+                                        "info": "The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and tools essential to maximizing developer productivity and the performance and portability of HPC applications. The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA. GPU-accelerated math libraries maximize performance on common HPC algorithms, and optimized communications libraries enable standards-based multi-GPU and scalable systems programming. Performance profiling and debugging tools simplify porting and optimization of HPC applications.",
+                                        "versions": {
+                                            "21.3": {
+                                                "child": {},
+                                                "module_name": "nvhpc/21.3-cuda-mpi",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/nvhpc/21.3-cuda-mpi.lua",
+                                                "version_no": "21.3"
+                                            }
+                                        }
+                                    },
+                                    "openmpi": {
+                                        "info": "An open source Message Passing Interface implementation. The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.",
+                                        "versions": {
+                                            "3.1.6-cuda": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-cuda-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/openmpi/3.1.6-niwxbue/gcc/9.3.0/hdf5/1.10.6-cuda-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "netcdf-cxx4": {
+                                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C++ distribution.",
+                                                        "versions": {
+                                                            "4.3.1": {
+                                                                "child": {},
+                                                                "module_name": "netcdf-cxx4/4.3.1-cuda",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/openmpi/3.1.6-niwxbue/gcc/9.3.0/netcdf-cxx4/4.3.1-cuda.lua",
+                                                                "version_no": "4.3.1"
+                                                            }
+                                                        }
+                                                    },
+                                                    "parallel-netcdf": {
+                                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                                        "versions": {
+                                                            "1.12.1": {
+                                                                "child": {},
+                                                                "module_name": "parallel-netcdf/1.12.1-cuda",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/openmpi/3.1.6-niwxbue/gcc/9.3.0/parallel-netcdf/1.12.1-cuda.lua",
+                                                                "version_no": "1.12.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "",
+                                                "path": "",
+                                                "version_no": ""
+                                            },
+                                            "4.0.4": {
+                                                "child": {},
+                                                "module_name": "openmpi/4.0.4-cuda",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/openmpi/4.0.4-cuda.lua",
+                                                "version_no": "4.0.4"
+                                            }
+                                        }
+                                    },
+                                    "py-setuptools": {
+                                        "info": "A Python utility that aids in the process of downloading, building, upgrading, installing, and uninstalling Python packages.",
+                                        "versions": {
+                                            "46.1.3": {
+                                                "child": {},
+                                                "module_name": "py-setuptools/46.1.3",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/py-setuptools/46.1.3.lua",
+                                                "version_no": "46.1.3"
+                                            }
+                                        }
+                                    },
+                                    "py-termcolor": {
+                                        "info": "ANSII Color formatting for output in terminal.",
+                                        "versions": {
+                                            "1.1.0": {
+                                                "child": {},
+                                                "module_name": "py-termcolor/1.1.0",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/py-termcolor/1.1.0.lua",
+                                                "version_no": "1.1.0"
+                                            }
+                                        }
+                                    },
+                                    "swig": {
+                                        "info": "SWIG is an interface compiler that connects programs written in C and C++ with scripting languages such as Perl, Python, Ruby, and Tcl. It works by taking the declarations found in C/C++ header files and using them to generate the wrapper code that scripting languages need to access the underlying C/C++ code. In addition, SWIG provides a variety of customization features that let you tailor the wrapping process to suit your application.",
+                                        "versions": {
+                                            "4.0.1": {
+                                                "child": {},
+                                                "module_name": "swig/4.0.1",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/gcc/9.3.0/swig/4.0.1.lua",
+                                                "version_no": "4.0.1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "gcc/9.3.0",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/Core/gcc/9.3.0.lua",
+                                "version_no": "9.3.0"
+                            }
+                        }
+                    },
+                    "matlab": {
+                        "info": "MATLAB (MATrix LABoratory) is a multi-paradigm numerical computing environment and fourth-generation programming language. A proprietary programming language developed by MathWorks, MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages, including C, C++, C#, Java, Fortran and Python. Note: MATLAB is licensed software. You will need to create an account on the MathWorks homepage and download MATLAB yourself. Spack will search your current directory for the download file. Alternatively, add this file to a mirror so that Spack can find it. For instructions on how to set up a mirror, see http://spack.readthedocs.io/en/latest/mirrors.html",
+                        "versions": {
+                            "R2020b": {
+                                "child": {},
+                                "module_name": "matlab/R2020b",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/matador/modules/linux-centos8-x86_64/Core/matlab/R2020b.lua",
+                                "version_no": "R2020b"
+                            }
+                        }
+                    }
+                },
+                "module_name": "matador/0.15.4",
+                "path": "/opt/apps/nfs/RedRaider-modules/matador/0.15.4.lua",
+                "version_no": "0.15.4"
+            }
+        }
+    },
+    "nocona": {
+        "info": "Adds modules for RedRaider Software Stack for AMD ROME Applications to MODULEPATH. ",
+        "versions": {
+            "0.15.4": {
+                "child": {
+                    "cmake": {
+                        "info": "A cross-platform, open-source build system. CMake is a family of tools designed to build, test and package software.",
+                        "versions": {
+                            "3.17.3": {
+                                "child": {},
+                                "module_name": "cmake/3.17.3",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/Core/cmake/3.17.3.lua",
+                                "version_no": "3.17.3"
+                            }
+                        }
+                    },
+                    "gcc": {
+                        "info": "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.",
+                        "versions": {
+                            "10.1.0": {
+                                "child": {
+                                    "charmpp": {
+                                        "info": "Charm++ is a parallel programming framework in C++ supported by an adaptive runtime system, which enhances user productivity and allows programs to run portably from small multicore computers (your laptop) to the largest supercomputers.",
+                                        "versions": {
+                                            "6.10.1": {
+                                                "child": {},
+                                                "module_name": "charmpp/6.10.1",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.1.0/charmpp/6.10.1.lua",
+                                                "version_no": "6.10.1"
+                                            }
+                                        }
+                                    },
+                                    "hdf5": {
+                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                        "versions": {
+                                            "1.10.6": {
+                                                "child": {},
+                                                "module_name": "hdf5/1.10.6",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.1.0/hdf5/1.10.6.lua",
+                                                "version_no": "1.10.6"
+                                            }
+                                        }
+                                    },
+                                    "netcdf-fortran": {
+                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the Fortran distribution.",
+                                        "versions": {
+                                            "4.5.2": {
+                                                "child": {},
+                                                "module_name": "netcdf-fortran/4.5.2",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.1.0/netcdf-fortran/4.5.2.lua",
+                                                "version_no": "4.5.2"
+                                            }
+                                        }
+                                    },
+                                    "openmpi": {
+                                        "info": "An open source Message Passing Interface implementation. The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.",
+                                        "versions": {
+                                            "3.1.6": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/3.1.6-shkqva7/gcc/10.1.0/hdf5/1.10.6-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "netcdf-cxx4": {
+                                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C++ distribution.",
+                                                        "versions": {
+                                                            "4.3.1": {
+                                                                "child": {},
+                                                                "module_name": "netcdf-cxx4/4.3.1",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/3.1.6-shkqva7/gcc/10.1.0/netcdf-cxx4/4.3.1.lua",
+                                                                "version_no": "4.3.1"
+                                                            }
+                                                        }
+                                                    },
+                                                    "parallel-netcdf": {
+                                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                                        "versions": {
+                                                            "1.12.1": {
+                                                                "child": {},
+                                                                "module_name": "parallel-netcdf/1.12.1",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/3.1.6-shkqva7/gcc/10.1.0/parallel-netcdf/1.12.1.lua",
+                                                                "version_no": "1.12.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "",
+                                                "path": "",
+                                                "version_no": ""
+                                            },
+                                            "4.0.4": {
+                                                "child": {
+                                                    "charmpp": {
+                                                        "info": "Charm++ is a parallel programming framework in C++ supported by an adaptive runtime system, which enhances user productivity and allows programs to run portably from small multicore computers (your laptop) to the largest supercomputers.",
+                                                        "versions": {
+                                                            "6.10.1": {
+                                                                "child": {},
+                                                                "module_name": "charmpp/6.10.1",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/4.0.4-ttww6bt/gcc/10.1.0/charmpp/6.10.1.lua",
+                                                                "version_no": "6.10.1"
+                                                            }
+                                                        }
+                                                    },
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/4.0.4-ttww6bt/gcc/10.1.0/hdf5/1.10.6-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "openmpi/4.0.4",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.1.0/openmpi/4.0.4.lua",
+                                                "version_no": "4.0.4"
+                                            }
+                                        }
+                                    },
+                                    "parallel-netcdf": {
+                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                        "versions": {
+                                            "1.12.1": {
+                                                "child": {},
+                                                "module_name": "parallel-netcdf/1.12.1",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.1.0/parallel-netcdf/1.12.1.lua",
+                                                "version_no": "1.12.1"
+                                            }
+                                        }
+                                    },
+                                    "perl": {
+                                        "info": "Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.",
+                                        "versions": {
+                                            "5.30.3": {
+                                                "child": {},
+                                                "module_name": "perl/5.30.3",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.1.0/perl/5.30.3.lua",
+                                                "version_no": "5.30.3"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "",
+                                "path": "",
+                                "version_no": ""
+                            },
+                            "10.2.0": {
+                                "child": {
+                                    "openmpi": {
+                                        "info": "An open source Message Passing Interface implementation. The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.",
+                                        "versions": {
+                                            "4.0.4": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/4.0.4-d4nnm42/gcc/10.2.0/hdf5/1.10.6-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "netcdf-cxx4": {
+                                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C++ distribution.",
+                                                        "versions": {
+                                                            "4.3.1": {
+                                                                "child": {},
+                                                                "module_name": "netcdf-cxx4/4.3.1",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/openmpi/4.0.4-d4nnm42/gcc/10.2.0/netcdf-cxx4/4.3.1.lua",
+                                                                "version_no": "4.3.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "openmpi/4.0.4",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.2.0/openmpi/4.0.4.lua",
+                                                "version_no": "4.0.4"
+                                            }
+                                        }
+                                    },
+                                    "perl": {
+                                        "info": "Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.",
+                                        "versions": {
+                                            "5.30.3": {
+                                                "child": {},
+                                                "module_name": "perl/5.30.3",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/10.2.0/perl/5.30.3.lua",
+                                                "version_no": "5.30.3"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "gcc/10.2.0",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/Core/gcc/10.2.0.lua",
+                                "version_no": "10.2.0"
+                            },
+                            "9.2.0": {
+                                "child": {
+                                    "hdf5": {
+                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                        "versions": {
+                                            "1.10.6": {
+                                                "child": {},
+                                                "module_name": "hdf5/1.10.6-mpi",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/9.2.0/hdf5/1.10.6-mpi.lua",
+                                                "version_no": "1.10.6"
+                                            }
+                                        }
+                                    },
+                                    "openmpi": {
+                                        "info": "An open source Message Passing Interface implementation. The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.",
+                                        "versions": {
+                                            "4.0.4": {
+                                                "child": {},
+                                                "module_name": "openmpi/4.0.4",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/9.2.0/openmpi/4.0.4.lua",
+                                                "version_no": "4.0.4"
+                                            }
+                                        }
+                                    },
+                                    "perl": {
+                                        "info": "Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.",
+                                        "versions": {
+                                            "5.30.3": {
+                                                "child": {},
+                                                "module_name": "perl/5.30.3",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/gcc/9.2.0/perl/5.30.3.lua",
+                                                "version_no": "5.30.3"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "",
+                                "path": "",
+                                "version_no": ""
+                            }
+                        }
+                    },
+                    "matlab": {
+                        "info": "MATLAB (MATrix LABoratory) is a multi-paradigm numerical computing environment and fourth-generation programming language. A proprietary programming language developed by MathWorks, MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages, including C, C++, C#, Java, Fortran and Python. Note: MATLAB is licensed software. You will need to create an account on the MathWorks homepage and download MATLAB yourself. Spack will search your current directory for the download file. Alternatively, add this file to a mirror so that Spack can find it. For instructions on how to set up a mirror, see http://spack.readthedocs.io/en/latest/mirrors.html",
+                        "versions": {
+                            "R2020b": {
+                                "child": {},
+                                "module_name": "matlab/R2020b",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/Core/matlab/R2020b.lua",
+                                "version_no": "R2020b"
+                            }
+                        }
+                    },
+                    "openfoam": {
+                        "info": "OpenFOAM is a GPL-opensource C++ CFD-toolbox. This offering is supported by OpenCFD Ltd, producer and distributor of the OpenFOAM software via www.openfoam.com, and owner of the OPENFOAM trademark. OpenCFD Ltd has been developing and releasing OpenFOAM since its debut in 2004.",
+                        "versions": {
+                            "v6.5": {
+                                "child": {},
+                                "module_name": "openfoam/v65",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/Core/openfoam/v65.lua",
+                                "version_no": "v6.5"
+                            }
+                        }
+                    },
+                    "perl": {
+                        "info": "Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.",
+                        "versions": {
+                            "5.30.3": {
+                                "child": {},
+                                "module_name": "perl/5.30.3",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/nocona/modules/linux-centos8-x86_64/Core/perl/5.30.3.lua",
+                                "version_no": "5.30.3"
+                            }
+                        }
+                    }
+                },
+                "module_name": "nocona/0.15.4",
+                "path": "/opt/apps/nfs/RedRaider-modules/nocona/0.15.4.lua",
+                "version_no": "0.15.4"
+            }
+        }
+    },
+    "quanah": {
+        "info": "Adds modules for RedRaider Software Stack for Intel Broadwell Applications to MODULEPATH. ",
+        "versions": {
+            "0.15.4": {
+                "child": {},
+                "module_name": "quanah/0.15.4",
+                "path": "/opt/apps/nfs/RedRaider-modules/quanah/0.15.4.lua",
+                "version_no": "0.15.4"
+            }
+        }
+    },
+    "toreador": {
+        "info": "Adds modules for RedRaider Software Stack for AMD ROAM / Nvidia A100 Applications to MODULEPATH. ",
+        "versions": {
+            "0.15.4": {
+                "child": {
+                    "cmake": {
+                        "info": "A cross-platform, open-source build system. CMake is a family of tools designed to build, test and package software.",
+                        "versions": {
+                            "3.17.3": {
+                                "child": {},
+                                "module_name": "cmake/3.17.3",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/Core/cmake/3.17.3.lua",
+                                "version_no": "3.17.3"
+                            }
+                        }
+                    },
+                    "gcc": {
+                        "info": "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.",
+                        "versions": {
+                            "10.1.0": {
+                                "child": {
+                                    "cuda": {
+                                        "info": "CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU). Note: This package does not currently install the drivers necessary to run CUDA. These will need to be installed manually. See: https://docs.nvidia.com/cuda/ for details.",
+                                        "versions": {
+                                            "11.3.0": {
+                                                "child": {},
+                                                "module_name": "cuda/11.3.0",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/10.1.0/cuda/11.3.0.lua",
+                                                "version_no": "11.3.0"
+                                            }
+                                        }
+                                    },
+                                    "cudnn": {
+                                        "info": "NVIDIA cuDNN is a GPU-accelerated library of primitives for deep neural networks",
+                                        "versions": {
+                                            "8.2.0.53-1": {
+                                                "child": {},
+                                                "module_name": "cudnn/8.2.0.53-1",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/10.1.0/cudnn/8.2.0.53-1.lua",
+                                                "version_no": "8.2.0.53-1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "gcc/10.1.0",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/Core/gcc/10.1.0.lua",
+                                "version_no": "10.1.0"
+                            },
+                            "9.3.0": {
+                                "child": {
+                                    "cuda": {
+                                        "info": "CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU). Note: This package does not currently install the drivers necessary to run CUDA. These will need to be installed manually. See: https://docs.nvidia.com/cuda/ for details.",
+                                        "versions": {
+                                            "11.3.0": {
+                                                "child": {},
+                                                "module_name": "cuda/11.3.0",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/9.3.0/cuda/11.3.0.lua",
+                                                "version_no": "11.3.0"
+                                            }
+                                        }
+                                    },
+                                    "hdf5": {
+                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                        "versions": {
+                                            "1.10.6": {
+                                                "child": {},
+                                                "module_name": "hdf5/1.10.6",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/9.3.0/hdf5/1.10.6.lua",
+                                                "version_no": "1.10.6"
+                                            }
+                                        }
+                                    },
+                                    "netcdf-fortran": {
+                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the Fortran distribution.",
+                                        "versions": {
+                                            "4.5.2": {
+                                                "child": {},
+                                                "module_name": "netcdf-fortran/4.5.2",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/9.3.0/netcdf-fortran/4.5.2.lua",
+                                                "version_no": "4.5.2"
+                                            }
+                                        }
+                                    },
+                                    "nvhpc": {
+                                        "info": "The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and tools essential to maximizing developer productivity and the performance and portability of HPC applications. The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA. GPU-accelerated math libraries maximize performance on common HPC algorithms, and optimized communications libraries enable standards-based multi-GPU and scalable systems programming. Performance profiling and debugging tools simplify porting and optimization of HPC applications.",
+                                        "versions": {
+                                            "21.3": {
+                                                "child": {},
+                                                "module_name": "nvhpc/21.3-mpi",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/9.3.0/nvhpc/21.3-mpi.lua",
+                                                "version_no": "21.3"
+                                            }
+                                        }
+                                    },
+                                    "openmpi": {
+                                        "info": "An open source Message Passing Interface implementation. The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.",
+                                        "versions": {
+                                            "3.1.6-cuda": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-cuda-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/3.1.6-kw62hgf/gcc/9.3.0/hdf5/1.10.6-cuda-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "netcdf-cxx4": {
+                                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C++ distribution.",
+                                                        "versions": {
+                                                            "4.3.1": {
+                                                                "child": {},
+                                                                "module_name": "netcdf-cxx4/4.3.1-cuda",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/3.1.6-kw62hgf/gcc/9.3.0/netcdf-cxx4/4.3.1-cuda.lua",
+                                                                "version_no": "4.3.1"
+                                                            }
+                                                        }
+                                                    },
+                                                    "parallel-netcdf": {
+                                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                                        "versions": {
+                                                            "1.12.1": {
+                                                                "child": {},
+                                                                "module_name": "parallel-netcdf/1.12.1-cuda",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/3.1.6-kw62hgf/gcc/9.3.0/parallel-netcdf/1.12.1-cuda.lua",
+                                                                "version_no": "1.12.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "",
+                                                "path": "",
+                                                "version_no": ""
+                                            },
+                                            "4.0.4": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/4.0.4-7orw4mm/gcc/9.3.0/hdf5/1.10.6-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "netcdf-cxx4": {
+                                                        "info": "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C++ distribution.",
+                                                        "versions": {
+                                                            "4.3.1": {
+                                                                "child": {},
+                                                                "module_name": "netcdf-cxx4/4.3.1",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/4.0.4-7orw4mm/gcc/9.3.0/netcdf-cxx4/4.3.1.lua",
+                                                                "version_no": "4.3.1"
+                                                            }
+                                                        }
+                                                    },
+                                                    "parallel-netcdf": {
+                                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                                        "versions": {
+                                                            "1.12.1": {
+                                                                "child": {},
+                                                                "module_name": "parallel-netcdf/1.12.1",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/4.0.4-7orw4mm/gcc/9.3.0/parallel-netcdf/1.12.1.lua",
+                                                                "version_no": "1.12.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "",
+                                                "path": "",
+                                                "version_no": ""
+                                            },
+                                            "4.1.1": {
+                                                "child": {},
+                                                "module_name": "openmpi/4.1.1-cuda",
+                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/gcc/9.3.0/openmpi/4.1.1-cuda.lua",
+                                                "version_no": "4.1.1"
+                                            },
+                                            "4.1.1-cuda": {
+                                                "child": {
+                                                    "hdf5": {
+                                                        "info": "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.",
+                                                        "versions": {
+                                                            "1.10.6": {
+                                                                "child": {},
+                                                                "module_name": "hdf5/1.10.6-cuda-mpi",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/4.1.1-hgjpqec/gcc/9.3.0/hdf5/1.10.6-cuda-mpi.lua",
+                                                                "version_no": "1.10.6"
+                                                            }
+                                                        }
+                                                    },
+                                                    "parallel-netcdf": {
+                                                        "info": "PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for accessing files in format compatibility with Unidata's NetCDF, specifically the formats of CDF-1, 2, and 5.",
+                                                        "versions": {
+                                                            "1.12.1": {
+                                                                "child": {},
+                                                                "module_name": "parallel-netcdf/1.12.1-cuda",
+                                                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/openmpi/4.1.1-hgjpqec/gcc/9.3.0/parallel-netcdf/1.12.1-cuda.lua",
+                                                                "version_no": "1.12.1"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "module_name": "",
+                                                "path": "",
+                                                "version_no": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "module_name": "",
+                                "path": "",
+                                "version_no": ""
+                            }
+                        }
+                    },
+                    "matlab": {
+                        "info": "MATLAB (MATrix LABoratory) is a multi-paradigm numerical computing environment and fourth-generation programming language. A proprietary programming language developed by MathWorks, MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages, including C, C++, C#, Java, Fortran and Python. Note: MATLAB is licensed software. You will need to create an account on the MathWorks homepage and download MATLAB yourself. Spack will search your current directory for the download file. Alternatively, add this file to a mirror so that Spack can find it. For instructions on how to set up a mirror, see http://spack.readthedocs.io/en/latest/mirrors.html",
+                        "versions": {
+                            "R2020b": {
+                                "child": {},
+                                "module_name": "matlab/R2020b",
+                                "path": "/opt/apps/nfs/spack/var/spack/environments/toreador/modules/linux-centos8-x86_64/Core/matlab/R2020b.lua",
+                                "version_no": "R2020b"
+                            }
+                        }
+                    }
+                },
+                "module_name": "toreador/0.15.4",
+                "path": "/opt/apps/nfs/RedRaider-modules/toreador/0.15.4.lua",
+                "version_no": "0.15.4"
+            }
+        }
+    }
+}
