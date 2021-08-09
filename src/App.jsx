@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './components/layout/Header';
 import ModeButton from './components/ModeButton';
 import Content from './components/layout/Content';
 import { makeStyles } from '@material-ui/core/styles';
+
+import getData from './service/getData';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -14,8 +16,18 @@ const useStyles = makeStyles(() => ({
 function App() {
   const classes = useStyles();
 
+  const [data, setData] = useState();
+  const [partitions, setPartitions] = useState();
   const [headerValue, setHeaderValue] = useState(0);
   const [contentValue, setContentValue] = useState('STACK');
+
+  useEffect(() => {
+    setData(getData());
+  }, [])
+
+  useEffect(() => {
+    if (data) setPartitions(Object.keys(data));
+  }, [data])
 
   const handleHeaderChange = (event, newValue) => {
     setHeaderValue(newValue);
@@ -28,7 +40,7 @@ function App() {
   return (
     <div className={classes.root}>
       <ModeButton handleChange={handleContentChange} />
-      <Header value={headerValue} handleChange={handleHeaderChange} />
+      <Header value={headerValue} partitions={partitions} handleChange={handleHeaderChange} />
       <Content value={contentValue} />
     </div>
   );

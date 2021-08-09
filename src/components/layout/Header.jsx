@@ -10,22 +10,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header({ value, handleChange }) {
+function Header({ value, partitions, handleChange }) {
   const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Nocona" />
-          <Tab label="Quanah" />
-          <Tab label="Matador" />
-          <Tab label="Toreador" />
-          <Tab label="GPU_Build" />
-          <Tab label="CC-Reserved" />
-        </Tabs>
-      </AppBar>
-    </div>
-  );
+  if (partitions) {
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Tabs value={value} onChange={handleChange} centered>
+            {
+              partitions.map(partition => {
+                return <Tab label={partition} key={partition} />
+              })
+            }
+          </Tabs>
+        </AppBar>
+      </div>
+    );
+  } else return null;
 }
 
 export default Header;
