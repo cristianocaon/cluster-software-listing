@@ -26,17 +26,24 @@ function StackList({ data }) {
   }
 
   useEffect(() => {
-    setValues(data)
+    setValues([Object.keys(data)])
   }, [data])
+
+  // useEffect(() => {
+  //   setValues([...values, [Object.keys(data)]])
+  // }, [selected])
 
   console.log(selected)
   console.log(values)
+  console.log(data)
 
   if (values) {
     return (
-      <Card className={classes.card}>
-        {Object.keys(values).map(value => <StackItem data={value} onClick={handleClick} />)}
-      </Card>
+      values.map(value => (
+        <Card className={classes.card}>
+          {value.map(el => <StackItem data={el} onClick={handleClick} />)}
+        </Card>
+      ))
     )
   }
 }
