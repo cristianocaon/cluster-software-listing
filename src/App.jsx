@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from './components/Header';
 import Loading from './components/Loading';
 import StackList from './components/StackList';
+import TextField from '@material-ui/core/TextField';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -11,6 +12,11 @@ const useStyles = makeStyles(() => ({
   root: {
     margin: 0,
     padding: 0,
+  },
+  form: {
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '1rem',
   },
   alert: {
     display: 'flex',
@@ -49,6 +55,9 @@ function App() {
     return (
       <div className={classes.root}>
         <Header value={headerValue} partitions={partitions} handleChange={handleHeaderChange} />
+        <form className={classes.form} noValidate autoComplete="off">
+          <TextField margin="dense" label="Search Applications" variant="outlined" />
+        </form>
         <StackList data={child} />
       </div>
     );
