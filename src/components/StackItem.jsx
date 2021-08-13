@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Fade from '@material-ui/core/Fade';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import Button from '@material-ui/core/Button';
@@ -49,9 +50,13 @@ function StackItem({ data, info, level, onClick }) {
         {data}
       </Button>
       <Popper {...bindPopper(popupState)} transition>
-        <Paper className={classes.paper}>
-          <Typography>{info}</Typography>
-        </Paper>
+        {({ TransitionProps }) => (
+          <Fade {...TransitionProps} timeout={1000}>
+            <Paper className={classes.paper}>
+              <Typography>{info}</Typography>
+            </Paper>
+          </Fade>
+        )}
       </Popper>
     </>
   )
