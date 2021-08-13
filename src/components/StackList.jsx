@@ -29,7 +29,7 @@ function StackList({ data }) {
   const [prevLength, setPrevLength] = useState(0);
 
   const handleClick = (event, id, setFlag) => {
-    let curr = event.target.innerText.toLowerCase();
+    let curr = event.target.innerText;
     if (level === id) {
       let lastSelected = selected[selected.length - 1];
       if (level % 2 === 0) {
@@ -100,7 +100,7 @@ function StackList({ data }) {
     setCards([fields]);
   }, [data])
 
-  // console.log(data)
+  console.log(data)
   // console.log(cards)
   // console.log(selected)
 

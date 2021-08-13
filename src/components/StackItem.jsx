@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '10px',
     marginLeft: '8px',
     marginRight: '8px',
+    textTransform: 'none',
   },
   paper: {
     padding: '1rem',
@@ -35,8 +36,6 @@ function StackItem({ data, info, level, onClick }) {
     variant: 'popper',
     popupId: data + 'popper',
   })
-
-  console.log(data)
 
   return (
     <>
