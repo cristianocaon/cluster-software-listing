@@ -82,7 +82,7 @@ function StackList({ data, getInfo }) {
           fields.push([key, info]);
         })
     }
-    if (selected.length === prevLength) {
+    if (selected.length === prevLength && selected.length !== 1) {
       setCards([...cards, fields]);
     } else {
       let temp = cards.slice(0, selected.length);
