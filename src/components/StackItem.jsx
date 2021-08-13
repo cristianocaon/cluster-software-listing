@@ -21,17 +21,18 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: '1rem',
+    width: '25%',
+    height: '50%',
   },
 }));
 
-function StackItem({ data, info, level, onClick }) {
+function StackItem({ data, info, level, onClick, getInfo }) {
   const classes = useStyles();
 
   const [id, setId] = useState("");
+  const [flag, setFlag] = useState(false);
 
   if (!id) setId(level + "_" + data)
-
-  const [flag, setFlag] = useState(false);
 
   const popupState = usePopupState({
     variant: 'popper',
@@ -46,18 +47,12 @@ function StackItem({ data, info, level, onClick }) {
         className={classes.button}
         variant="outlined"
         color={!flag ? "primary" : "secondary"}
-        onClick={(event) => onClick(event, parseInt(id[0]), setFlag)}>
+        onClick={(event) => {
+          onClick(event, parseInt(id[0]), setFlag)
+          getInfo(info);
+        }}>
         {data}
       </Button>
-      <Popper {...bindPopper(popupState)} transition>
-        {({ TransitionProps }) => (
-          <Fade {...TransitionProps} timeout={1000}>
-            <Paper className={classes.paper}>
-              <Typography>{info}</Typography>
-            </Paper>
-          </Fade>
-        )}
-      </Popper>
     </>
   )
 }

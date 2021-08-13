@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StackList({ data }) {
+function StackList({ data, getInfo }) {
   const classes = useStyles();
 
   const [level, setLevel] = useState(0);
@@ -104,7 +104,7 @@ function StackList({ data }) {
       cards.map(card => (
         <Card key={card[0]} className={classes.card}>
           {card.map(field => {
-            return <StackItem data={field[0]} info={field[1]} level={level} onClick={handleClick} />
+            return <StackItem data={field[0]} info={field[1]} level={level} onClick={handleClick} getInfo={getInfo} />
           })}
         </Card>
       ))
