@@ -68,19 +68,18 @@ function StackList({ data }) {
   useEffect(() => {
     let fields = []
     let lastSelected = selected[selected.length - 1];
-    console.log(lastSelected)
     if (level % 2 !== 0) {
       Object.keys(lastSelected).map(key => {
         let path = lastSelected[key].path;
         let module = lastSelected[key].module_name;
         let info = "module: " + module + " path: " + path;
-        fields.push([key, info, level + 1]);
+        fields.push([key, info]);
       })
     } else {
       if (selected.length !== 0)
         Object.keys(lastSelected).map(key => {
           let info = lastSelected[key].info;
-          fields.push([key, info, level + 1]);
+          fields.push([key, info]);
         })
     }
     if (selected.length === prevLength) {
@@ -95,14 +94,10 @@ function StackList({ data }) {
     let fields = []
     Object.keys(data).map(key => {
       let info = data[key].info;
-      fields.push([key, info, level]);
+      fields.push([key, info]);
     })
     setCards([fields]);
   }, [data])
-
-  console.log(data)
-  // console.log(cards)
-  // console.log(selected)
 
   if (cards) {
     return (
