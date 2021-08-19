@@ -78,7 +78,12 @@ function App() {
   useEffect(() => {
     if (data) {
       let { child } = data[partitionValue].versions['0.15.4'];
-      setPaths(findPathsToKey({ obj: child, key: input }));
+      let keyPath = findPathsToKey({ obj: child, key: input });
+      keyPath = keyPath.map(path => {
+        let tempPath = path.split('/').filter(item => item !== 'versions' && item !== 'child')
+        return tempPath.join('/');
+      })
+      setPaths(keyPath);
     }
   }, [input])
 
@@ -95,6 +100,11 @@ function App() {
     setInput(event.target.value);
   };
 
+  const handlePathChange = (event) => {
+    console.log(event.target.innerText.split("/"));
+    setPaths([]);
+  };
+
   if (!error && data) {
     let { child } = data[partitionValue].versions['0.15.4'];
     if (loading) return <Loading />
@@ -106,7 +116,9 @@ function App() {
             <form className={classes.form} noValidate autoComplete="off">
               <TextField margin="dense" label="Search Applications" variant="outlined" onChange={handleChange} />
             </form>
-            {paths.length > 0 ? <Card className={classes.paths}>{paths.map(path => <Path data={path} />)}</Card> : <StackList className={classes.stack} data={child} getInfo={getInfo} />}
+            {paths.length > 0 ?
+              <Card className={classes.paths}>{paths.map(path => <Path data={path} onClick={handlePathChange} />)}</Card>
+              : <StackList className={classes.stack} data={child} getInfo={getInfo} />}
           </div>
         </div>
         {info &&

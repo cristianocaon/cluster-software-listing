@@ -6,7 +6,7 @@ const findPathsToKey = (options) => {
     obj,
     pathToKey,
   }) {
-    const oldPath = `${pathToKey ? pathToKey + "." : ""}`;
+    const oldPath = `${pathToKey ? pathToKey + "/" : ""}`;
     if (obj.hasOwnProperty(key)) {
       results.push(`${oldPath}${key}`);
       return;

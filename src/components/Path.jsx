@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   })
 }));
 
-function Path({ data }) {
+function Path({ data, onClick }) {
   const classes = useStyles({ backgroundColor: '#073b4c' });
 
   return (
@@ -29,6 +29,7 @@ function Path({ data }) {
       key={data}
       className={classes.button}
       variant="outlined"
+      onClick={onClick}
       disableElevation={true}>
       {data}
     </Button>

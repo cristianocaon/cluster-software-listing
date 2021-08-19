@@ -28,7 +28,7 @@ function StackList({ data, getInfo }) {
   const [selected, setSelected] = useState([]);
   const [prevLength, setPrevLength] = useState(0);
 
-  const handleClick = (event, id, setFlag) => {
+  const handleClick = (event, id, flag, setFlag) => {
     let curr = event.target.innerText;
     if (level === id) {
       let lastSelected = selected[selected.length - 1];
@@ -49,7 +49,9 @@ function StackList({ data, getInfo }) {
       }
       setLevel(level + 1);
     } else {
+      // console.log(selected)
       let temp = selected.slice(0, id);
+      // console.log(temp)
       let lastSelected = temp.length === 0 ? [] : temp[temp.length - 1];
       if (id % 2 === 0) {
         if (lastSelected.length === 0) {
@@ -82,9 +84,11 @@ function StackList({ data, getInfo }) {
           fields.push([key, info]);
         })
     }
-    if (selected.length === prevLength && selected.length !== 1) {
+    console.log(selected.length, prevLength)
+    if (selected.length === prevLength) {
       setCards([...cards, fields]);
     } else {
+      console.log("here")
       let temp = cards.slice(0, selected.length);
       setCards([...temp, fields]);
     }
@@ -98,6 +102,9 @@ function StackList({ data, getInfo }) {
     })
     setCards([fields]);
   }, [data])
+
+  // console.log(selected)
+  // console.log(cards)
 
   if (cards) {
     return (

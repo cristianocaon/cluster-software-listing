@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -19,11 +19,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '8px',
     textTransform: 'none',
   }),
-  paper: {
-    padding: '1rem',
-    width: '25%',
-    height: '50%',
-  },
 }));
 
 function StackItem({ data, info, level, onClick, getInfo }) {
@@ -48,7 +43,7 @@ function StackItem({ data, info, level, onClick, getInfo }) {
       className={classes.button}
       variant="outlined"
       onClick={(event) => {
-        onClick(event, parseInt(id[0]), setFlag)
+        onClick(event, parseInt(id[0]), flag, setFlag)
         getInfo(info);
       }}
       disableElevation={true}>
