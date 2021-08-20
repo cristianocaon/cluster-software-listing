@@ -20,99 +20,106 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StackList({ data, getInfo }) {
+function StackList({ data, partition, getInfo }) {
   const classes = useStyles();
 
   const [level, setLevel] = useState(0);
   const [cards, setCards] = useState([]);
   const [selected, setSelected] = useState([]);
-  const [prevLength, setPrevLength] = useState(0);
+  const [prevLevel, setPrevLevel] = useState(-1);
 
-  const handleClick = (event, id, flag, setFlag) => {
-    let curr = event.target.innerText;
+  const handleClick = (event, id, setFlag) => {
+    let currBtn = event.target.innerText;
     if (level === id) {
       let lastSelected = selected[selected.length - 1];
       if (level % 2 === 0) {
         if (selected.length === 0) {
-          let temp = [...selected, data[curr].versions];
-          setSelected(temp);
-          setPrevLength(temp.length)
+          setSelected([...selected, data[currBtn].versions]);
         } else {
-          let temp = [...selected, lastSelected[curr].versions]
-          setSelected(temp);
-          setPrevLength(temp.length)
+          setSelected([...selected, lastSelected[currBtn].versions]);
         }
       } else {
-        let temp = [...selected, lastSelected[curr].child]
-        setSelected(temp);
-        setPrevLength(temp.length)
+        setSelected([...selected, lastSelected[currBtn].child]);
       }
+      setPrevLevel(level);
       setLevel(level + 1);
     } else {
-      // console.log(selected)
-      let temp = selected.slice(0, id);
-      // console.log(temp)
-      let lastSelected = temp.length === 0 ? [] : temp[temp.length - 1];
+      let newSelected = selected.slice(0, id);
       if (id % 2 === 0) {
-        if (lastSelected.length === 0) {
-          setSelected([...temp, data[curr].versions]);
+        if (newSelected.length === 0) {
+          setSelected([...newSelected, data[currBtn].versions]);
         } else {
-          setSelected([...temp, lastSelected[curr].versions]);
+          let lastSelected = newSelected[newSelected.length - 1];
+          setSelected([...newSelected, lastSelected[currBtn].versions]);
         }
       } else {
-        setSelected([...temp, lastSelected[curr].child]);
+        let lastSelected = newSelected[newSelected.length - 1];
+        setSelected([...newSelected, lastSelected[currBtn].child]);
       }
+      setPrevLevel(level);
       setLevel(id + 1);
     }
     setFlag(true);
   }
 
   useEffect(() => {
-    let fields = []
+    let fields = [];
     let lastSelected = selected[selected.length - 1];
     if (level % 2 !== 0) {
-      Object.keys(lastSelected).map(key => {
+      fields = Object.keys(lastSelected).map(key => {
         let path = lastSelected[key].path;
         let module = lastSelected[key].module_name;
         let info = "module: " + module + " path: " + path;
-        fields.push([key, info]);
+        return [key, info];
       })
     } else {
       if (selected.length !== 0)
-        Object.keys(lastSelected).map(key => {
+        fields = Object.keys(lastSelected).map(key => {
           let info = lastSelected[key].info;
-          fields.push([key, info]);
+          return [key, info];
         })
     }
-    console.log(selected.length, prevLength)
-    if (selected.length === prevLength) {
-      setCards([...cards, fields]);
-    } else {
-      console.log("here")
-      let temp = cards.slice(0, selected.length);
-      setCards([...temp, fields]);
+    if (fields.length > 0) {
+      if (level > prevLevel) {
+        setCards(prevState => ([...prevState, fields]))
+        // setCards([...cards, fields]);
+      } else {
+        setCards(prevState => ([...prevState.slice(0, selected.length), fields]));
+        // setCards([...cards.slice(0, selected.length), fields, fields]);
+      }
     }
-  }, [selected, level, prevLength])
+  }, [selected, level, prevLevel])     // bugs at adding 'cards' dependency
 
   useEffect(() => {
-    let fields = []
-    Object.keys(data).map(key => {
+    let fields = Object.keys(data).map(key => {
       let info = data[key].info;
-      fields.push([key, info]);
+      return [key, info];
     })
     setCards([fields]);
   }, [data])
 
-  // console.log(selected)
-  // console.log(cards)
+  useEffect(() => {
+    setLevel(0);
+    setPrevLevel(-1);
+    setSelected([]);
+  }, [partition])
 
   if (cards) {
     return (
       cards.map(card => (
-        <Card key={card[0]} className={classes.card}>
-          {card.map(field => {
-            return <StackItem data={field[0]} info={field[1]} level={level} onClick={handleClick} getInfo={getInfo} />
-          })}
+        // bugs at adding keys to Card and StackItem
+        <Card key={partition + "_" + card[0][0] + "_" + level} className={classes.card}>
+          {
+            card.map(field => {
+              return <StackItem
+                key={partition + "_" + field[0] + "_" + level}
+                data={field[0]}
+                info={field[1]}
+                level={level}
+                onClick={handleClick}
+                getInfo={getInfo} />
+            })
+          }
         </Card>
       ))
     )

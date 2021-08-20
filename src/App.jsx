@@ -85,7 +85,7 @@ function App() {
       })
       setPaths(keyPath);
     }
-  }, [input])
+  }, [data, input, partitionValue])
 
   const handleHeaderChange = (event, newValue) => {
     setHeaderValue(newValue);
@@ -117,16 +117,16 @@ function App() {
               <TextField margin="dense" label="Search Applications" variant="outlined" onChange={handleChange} />
             </form>
             {paths.length > 0 ?
-              <Card className={classes.paths}>{paths.map(path => <Path data={path} onClick={handlePathChange} />)}</Card>
-              : <StackList className={classes.stack} data={child} getInfo={getInfo} />}
+              <Card className={classes.paths}>{paths.map(path => <Path key={path} data={path} onClick={handlePathChange} />)}</Card>
+              : <StackList className={classes.stack} data={child} partition={partitionValue} getInfo={getInfo} />}
           </div>
         </div>
-        {info &&
-          <Card className={classes.text} variant="outlined">
-            <Typography variant="h6" style={{ backgroundColor: '#fff' }}><strong>Description</strong></Typography>
+        <Card className={classes.text} variant="outlined">
+          <Typography variant="h6" style={{ backgroundColor: '#fff' }}><strong>Description</strong></Typography>
+          {info &&
             <Typography>{info}</Typography>
-          </Card>
-        }
+          }
+        </Card>
       </div>
     );
   } else {
