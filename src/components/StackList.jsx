@@ -30,15 +30,17 @@ function StackList({ data, partition, getInfo }) {
 
   const handleClick = (event, id, setFlag) => {
     let currBtn = event.target.innerText;
+    console.log(level, prevLevel);
     if (level === id) {
-      let lastSelected = selected[selected.length - 1];
       if (level % 2 === 0) {
         if (selected.length === 0) {
           setSelected([...selected, data[currBtn].versions]);
         } else {
+          let lastSelected = selected[selected.length - 1];
           setSelected([...selected, lastSelected[currBtn].versions]);
         }
       } else {
+        let lastSelected = selected[selected.length - 1];
         setSelected([...selected, lastSelected[currBtn].child]);
       }
       setPrevLevel(level);
@@ -104,11 +106,12 @@ function StackList({ data, partition, getInfo }) {
     setSelected([]);
   }, [partition])
 
+  console.log(level, prevLevel);
+
   if (cards) {
     return (
       cards.map(card => (
-        // bugs at adding keys to Card and StackItem
-        <Card key={partition + "_" + card[0][0] + "_" + level} className={classes.card}>
+        <Card key={partition + "_" + cards.indexOf(card) + "_" + level} className={classes.card}>
           {
             card.map(field => {
               return <StackItem
