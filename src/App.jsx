@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Path from './components/Path';
 import Header from './components/Header';
 import Loading from './components/Loading';
-import StackList from './components/StackList';
+import Stack from './components/Stack';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
@@ -118,7 +118,7 @@ function App() {
             </form>
             {paths.length > 0 ?
               <Card className={classes.paths}>{paths.map(path => <Path key={path} data={path} onClick={handlePathChange} />)}</Card>
-              : <StackList className={classes.stack} data={child} partition={partitionValue} getInfo={getInfo} />}
+              : <Stack className={classes.stack} data={child} partition={partitionValue} getInfo={getInfo} />}
           </div>
         </div>
         <Card className={classes.text} variant="outlined">
