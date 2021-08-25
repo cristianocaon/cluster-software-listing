@@ -11,25 +11,27 @@ function StackList({ data, partition, getInfo }) {
   const cardsRef = useRef();
 
   const handleClick = (event, setFlag) => {
-    // console.log(cardsRef.current.childNodes[level].childNodes)
-    let temp = cardsRef.current.childNodes[level].childNodes;
+    let rows = cardsRef.current.childNodes;
     let currBtn = event.target.innerText;
-    // console.log(temp)
+
     let curr;
-    for (let i = 0; i < temp.length; i++) {
-      if (currBtn === temp[i].textContent) {
-        curr = temp[i].parentElement;
+    for (let i = 0; i < rows.length; i++) {
+      let rowItems = rows[i].childNodes;
+      for (let j = 0; j < rowItems.length; j++) {
+        if (currBtn === rowItems[j].textContent) {
+          curr = rowItems[j].parentElement;
+        }
       }
     }
 
-    let temp2 = cardsRef.current.childNodes;
     let id;
-    for (let i = 0; i < temp2.length; i++) {
-      if (curr.textContent === temp2[i].textContent) {
-        console.log("index: " + i)
+    for (let i = 0; i < rows.length; i++) {
+      if (curr.textContent === rows[i].textContent) {
         id = i;
       }
     }
+
+    console.log(level, id)
 
     if (level === id) {
       if (level % 2 === 0) {
