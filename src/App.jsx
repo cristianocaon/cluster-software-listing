@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
     margin: 0,
     padding: 0,
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   form: {
     display: 'flex',
@@ -42,8 +42,8 @@ const useStyles = makeStyles(() => ({
   text: {
     flexGrow: 0,
     textAlign: 'center',
+    marginTop: '1rem',
     padding: '1rem',
-    width: '30%',
   },
   paths: {
     display: 'flex',
@@ -122,10 +122,11 @@ function App() {
           </div>
         </div>
         <Card className={classes.text} variant="outlined">
-          <Typography variant="h6" style={{ backgroundColor: '#fff' }}><strong>Description</strong></Typography>
-          {info &&
-            <Typography>{info}</Typography>
-          }
+          <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
+            <strong>Description: </strong>
+            {info && <span>{info}</span>}
+          </Typography>
+          <Typography variant="h6" style={{ backgroundColor: '#fff' }}><strong>Info: </strong></Typography>
         </Card>
       </div>
     );
