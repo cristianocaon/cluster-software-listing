@@ -11,6 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import findPathsToKey from './util/findPathsToKey';
 
+import _ from 'lodash';
+
 import getData from './service/getData';
 
 const useStyles = makeStyles(() => ({
@@ -44,6 +46,10 @@ const useStyles = makeStyles(() => ({
     textAlign: 'center',
     marginTop: '1rem',
     padding: '1rem',
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    width: '100%',
   },
   paths: {
     display: 'flex',
@@ -79,11 +85,22 @@ function App() {
     if (data) {
       let { child } = data[partitionValue].versions['0.15.4'];
       let keyPath = findPathsToKey({ obj: child, key: input });
-      keyPath = keyPath.map(path => {
-        let tempPath = path.split('/').filter(item => item !== 'versions' && item !== 'child')
-        return tempPath.join('/');
-      })
-      setPaths(keyPath);
+      if (keyPath.length > 0) {
+        keyPath = keyPath.map(path => {
+          let splitPath = path.split('/')
+          let pathVersions = Object.keys(_.get(child, splitPath).versions);
+          let filteredPath = splitPath.filter(item => item !== 'versions' && item !== 'child').join('/')
+          let finalPath = pathVersions.map(version => filteredPath + "/" + version)
+          console.log([...finalPath])
+          return [...finalPath];
+        })
+      }
+      let paths = [];
+      for (let i = 0; i < keyPath.length; i++) {
+        paths = paths.concat(keyPath[i])
+      }
+      console.log(paths)
+      setPaths(paths);
     }
   }, [data, input, partitionValue])
 
@@ -92,8 +109,14 @@ function App() {
     setPartitionValue(partitions[newValue]);
   };
 
-  const getInfo = (text) => {
-    setInfo(text);
+  const getInfo = (info, level, isApp) => {
+    // console.log(isApp);
+    console.log(level)
+    if (level % 2 === 0) {
+      setInfo([info]);
+    } else {
+      setInfo(prevInfo => ([prevInfo, info]));
+    }
   }
 
   const handleChange = (event) => {
@@ -122,11 +145,24 @@ function App() {
           </div>
         </div>
         <Card className={classes.text} variant="outlined">
-          <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
-            <strong>Description: </strong>
-            {info && <span>{info}</span>}
-          </Typography>
-          <Typography variant="h6" style={{ backgroundColor: '#fff' }}><strong>Info: </strong></Typography>
+          {info && info.length === 1 &&
+            <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
+              <strong>Description: </strong>
+              <span>{info[0]}</span>
+            </Typography>
+          }
+          {info && info.length === 2 &&
+            <>
+              <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
+                <strong>Description: </strong>
+                <span>{info[0]}</span>
+              </Typography>
+              <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
+                <strong>Info: </strong>
+                <span>{info[1]}</span>
+              </Typography>
+            </>
+          }
         </Card>
       </div>
     );
