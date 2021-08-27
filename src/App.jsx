@@ -91,7 +91,6 @@ function App() {
           let pathVersions = Object.keys(_.get(child, splitPath).versions);
           let filteredPath = splitPath.filter(item => item !== 'versions' && item !== 'child').join('/')
           let finalPath = pathVersions.map(version => filteredPath + "/" + version)
-          console.log([...finalPath])
           return [...finalPath];
         })
       }
@@ -99,8 +98,23 @@ function App() {
       for (let i = 0; i < keyPath.length; i++) {
         paths = paths.concat(keyPath[i])
       }
-      console.log(paths)
-      setPaths(paths);
+
+      let formattedPaths = []
+      for (let i = 0; i < paths.length; i++) {
+        let splitPath = paths[i].split('/');
+        let formattedPath = "";
+        for (let j = 0; j < splitPath.length; j++) {
+          if (j % 2 === 0) {
+            formattedPath += splitPath[j] + "/";
+          } else if (j !== splitPath.length - 1) {
+            formattedPath += splitPath[j] + " >>> ";
+          } else {
+            formattedPath += splitPath[j]
+          }
+        }
+        formattedPaths.push(formattedPath);
+      }
+      setPaths(formattedPaths);
     }
   }, [data, input, partitionValue])
 
@@ -124,7 +138,9 @@ function App() {
   };
 
   const handlePathChange = (event) => {
-    console.log(event.target.innerText.split("/"));
+    let temp = event.target.innerText.split("/").join();
+    temp = temp.split(' >>> ');
+    console.log(temp)
     setPaths([]);
   };
 
