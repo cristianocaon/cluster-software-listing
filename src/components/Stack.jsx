@@ -1,7 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react'
-import StackRow from "./StackRow";
+import React, { useState, useEffect, useRef } from 'react';
+import StackRow from './StackRow';
+import { Alert, AlertTitle } from '@material-ui/lab';
+import { makeStyles } from '@material-ui/core/styles';
 
-function StackList({ data, partition, getInfo }) {
+const useStyles = makeStyles(() => ({
+  alert: {
+    display: 'flex',
+    marginTop: '1rem',
+    justifyContent: 'center',
+    fontFamily: 'Roboto',
+  },
+}));
+
+function Stack({ data, partition, getInfo }) {
+  const classes = useStyles();
 
   const [level, setLevel] = useState(0);
   const [cards, setCards] = useState([]);
@@ -31,10 +43,8 @@ function StackList({ data, partition, getInfo }) {
       }
     }
 
-    console.log(level, id)
-
     if (level === id) {
-      if (level % 2 === 0) {
+      if (id % 2 === 0) {
         if (selected.length === 0) {
           setSelected([...selected, data[currBtn].versions]);
         } else {
@@ -64,64 +74,74 @@ function StackList({ data, partition, getInfo }) {
       setLevel(id + 1);
     }
     setFlag(true);
-  }
+  };
 
   useEffect(() => {
     let fields = [];
     let lastSelected = selected[selected.length - 1];
     if (level % 2 !== 0) {
-      fields = Object.keys(lastSelected).map(key => {
+      fields = Object.keys(lastSelected).map((key) => {
         let path = lastSelected[key].path;
         let module = lastSelected[key].module_name;
-        let info = "module: " + module + " path: " + path;
+        let info = 'module: ' + module + ' path: ' + path;
         return [key, info];
-      })
+      });
     } else {
       if (selected.length !== 0)
-        fields = Object.keys(lastSelected).map(key => {
+        fields = Object.keys(lastSelected).map((key) => {
           let info = lastSelected[key].info;
           return [key, info];
-        })
+        });
     }
     if (fields.length > 0) {
       if (level > prevLevel) {
-        setCards(prevState => ([...prevState, fields]))
+        setCards((prevState) => [...prevState, fields]);
       } else {
-        setCards(prevState => ([...prevState.slice(0, selected.length), fields]));
+        setCards((prevState) => [
+          ...prevState.slice(0, selected.length),
+          fields,
+        ]);
       }
     }
-  }, [selected, level, prevLevel])
+  }, [selected, level, prevLevel]);
 
   useEffect(() => {
-    let fields = Object.keys(data).map(key => {
+    let fields = Object.keys(data).map((key) => {
       let info = data[key].info;
       return [key, info];
-    })
+    });
     setCards([fields]);
-  }, [data])
+    setLevel(0);
+  }, [data]);
 
   useEffect(() => {
     setLevel(0);
     setPrevLevel(-1);
     setSelected([]);
-  }, [partition])
+  }, [partition]);
 
   if (cards) {
     return (
-      <div ref={cardsRef} >
-        {cards.map(card =>
+      <div ref={cardsRef}>
+        {cards.map((card, index) => (
           <StackRow
             data={card}
             partition={partition}
-            level={level}
+            level={index}
             index={cards.indexOf(card)}
             onClick={handleClick}
             getInfo={getInfo}
           />
-        )}
+        ))}
       </div>
-    )
-  } else return null;
+    );
+  } else {
+    return (
+      <Alert severity="error" className={classes.alert}>
+        <AlertTitle>Error</AlertTitle>
+      </Alert>
+    );
+  }
 }
 
-export default StackList
+export default Stack;
