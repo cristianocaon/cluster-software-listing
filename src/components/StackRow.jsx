@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
   }),
 }));
 
-function StackRow({ data, partition, level, index, onClick, getInfo }) {
+function StackRow({ data, partition, level, flag, index, onClick, getInfo }) {
   const classes = useStyles({ level: level });
 
   return (
@@ -28,6 +28,7 @@ function StackRow({ data, partition, level, index, onClick, getInfo }) {
             key={partition + '_' + field[0] + '_' + level}
             data={field[0]}
             info={field[1]}
+            flag={field[2]}
             level={level}
             onClick={onClick}
             getInfo={getInfo}

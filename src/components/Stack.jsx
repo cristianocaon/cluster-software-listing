@@ -17,14 +17,17 @@ function Stack({ data, partition, getInfo }) {
 
   const [level, setLevel] = useState(0);
   const [cards, setCards] = useState([]);
+  const [clicked, setClicked] = useState('');
   const [selected, setSelected] = useState([]);
   const [prevLevel, setPrevLevel] = useState(-1);
 
   const cardsRef = useRef();
 
-  const handleClick = (event, setFlag) => {
+  const handleClick = (event) => {
     let rows = cardsRef.current.childNodes;
     let currBtn = event.target.innerText;
+
+    setClicked(currBtn);
 
     let curr;
     for (let i = 0; i < rows.length; i++) {
@@ -73,7 +76,7 @@ function Stack({ data, partition, getInfo }) {
       setPrevLevel(level);
       setLevel(id + 1);
     }
-    setFlag(true);
+    // setFlag(true);
   };
 
   useEffect(() => {
@@ -84,15 +87,16 @@ function Stack({ data, partition, getInfo }) {
         let path = lastSelected[key].path;
         let module = lastSelected[key].module_name;
         let info = 'module: ' + module + ' path: ' + path;
-        return [key, info];
+        return [key, info, false];
       });
     } else {
       if (selected.length !== 0)
         fields = Object.keys(lastSelected).map((key) => {
           let info = lastSelected[key].info;
-          return [key, info];
+          return [key, info, false];
         });
     }
+
     if (fields.length > 0) {
       if (level > prevLevel) {
         setCards((prevState) => [...prevState, fields]);
@@ -106,9 +110,25 @@ function Stack({ data, partition, getInfo }) {
   }, [selected, level, prevLevel]);
 
   useEffect(() => {
+    let index = level === 0 ? 0 : level - 1;
+    let currRow = cards[index];
+    if (currRow) {
+      for (let i = 0; i < currRow.length; i++) {
+        let currBtn = currRow[i];
+        if (currBtn[2] === true) {
+          currBtn[2] = false;
+        }
+        if (currBtn[0] === clicked) {
+          currBtn[2] = true;
+        }
+      }
+    }
+  }, [cards, clicked, level]);
+
+  useEffect(() => {
     let fields = Object.keys(data).map((key) => {
       let info = data[key].info;
-      return [key, info];
+      return [key, info, false];
     });
     setCards([fields]);
     setLevel(0);
