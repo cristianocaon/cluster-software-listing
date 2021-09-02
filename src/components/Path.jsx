@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  button: props => ({
+  button: (props) => ({
     '&:hover': {
       backgroundColor: props.backgroundColor,
       transition: 'opacity .4s ease-out',
@@ -10,19 +10,20 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: props.backgroundColor,
     color: 'white',
-    border: 0,
+    border: '1',
+    borderColor: '#3f37c9',
     borderRadius: 3,
     boxShadow: '0 3px 5px 2px rgba(200, 200, 200, .3)',
     margin: '10px',
     marginLeft: '8px',
     marginRight: '8px',
     textTransform: 'none',
-    width: '50%'
-  })
+    width: '50%',
+  }),
 }));
 
 function Path({ data, onClick }) {
-  const classes = useStyles({ backgroundColor: '#073b4c' });
+  const classes = useStyles({ backgroundColor: '#3d2f8d' });
 
   return (
     <Button
@@ -30,10 +31,11 @@ function Path({ data, onClick }) {
       className={classes.button}
       variant="outlined"
       onClick={onClick}
-      disableElevation={true}>
+      disableElevation={true}
+    >
       {data}
     </Button>
-  )
+  );
 }
 
-export default Path
+export default Path;
