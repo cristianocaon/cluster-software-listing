@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
       opacity: '0.5',
     },
     backgroundColor: props.backgroundColor,
-    color: 'white',
+    color: props.color,
     border: '1',
     borderColor: '#3f37c9',
     borderRadius: 3,
@@ -23,6 +23,7 @@ const useStyles = makeStyles(() => ({
 
 function StackItem({ data, info, flag, level, onClick, getInfo }) {
   const styleProps = {
+    color: flag ? '#0019ff' : '#fbffef',
     backgroundColor: flag ? '#36e79b' : level % 2 === 0 ? '#003f88' : '#858ae3',
   };
 
