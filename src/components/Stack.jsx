@@ -21,6 +21,7 @@ function Stack({ data, partition, getInfo }) {
 
   const [level, setLevel] = useState(0);
   const [cards, setCards] = useState([]);
+  const [changed, setChanged] = useState(0);
   const [clicked, setClicked] = useState('');
   const [selected, setSelected] = useState([]);
   const [prevLevel, setPrevLevel] = useState(-1);
@@ -125,6 +126,7 @@ function Stack({ data, partition, getInfo }) {
           currBtn[2] = true;
         }
       }
+      setChanged((prevState) => prevState + 1);
     }
   }, [cards, clicked, level]);
 
@@ -148,6 +150,7 @@ function Stack({ data, partition, getInfo }) {
       <div style={{ height: '50vh', overflowY: 'auto' }} ref={cardsRef}>
         {cards.map((card, index) => (
           <StackRow
+            key={partition + '_' + index + '_' + card}
             data={card}
             partition={partition}
             level={index}
