@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Loading from './components/Loading';
 import Stack from './components/Stack';
 import Card from '@material-ui/core/Card';
+import Container from '@material-ui/core/Container';
+import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { Alert, AlertTitle } from '@material-ui/lab';
@@ -41,25 +43,28 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     flexGrow: 2,
   },
-  stack: {
-    flexGrow: '1',
-  },
-  text: {
-    flexGrow: 0,
-    textAlign: 'center',
-    marginTop: '1rem',
+  descAndInfoCard: {
+    display: 'flex',
+    flexDirection: 'row',
+    textAlign: 'left',
     padding: '1rem',
     position: 'fixed',
     bottom: 0,
     left: 0,
-    width: '100%',
+    right: 0,
+    height: '20%',
+  },
+  descContainer: {
+    overflowY: 'auto',
+  },
+  infoContainer: {
+    overflowY: 'auto',
   },
   paths: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '1rem',
   },
 }));
 
@@ -154,58 +159,51 @@ function App() {
     if (loading) return <Loading />;
     return (
       <div className={classes.root}>
-        <div className={classes.container}>
-          <Header
-            className={classes.header}
-            value={headerValue}
-            partitions={partitions}
-            handleChange={handleHeaderChange}
+        <Header
+          className={classes.header}
+          value={headerValue}
+          partitions={partitions}
+          handleChange={handleHeaderChange}
+        />
+        <form className={classes.form} noValidate autoComplete="off">
+          <TextField
+            className={classes.search}
+            margin="dense"
+            label="Search Applications"
+            variant="outlined"
+            onChange={handleChange}
           />
-          <div className={classes.stack}>
-            <form className={classes.form} noValidate autoComplete="off">
-              <TextField
-                className={classes.search}
-                margin="dense"
-                label="Search Applications"
-                variant="outlined"
-                onChange={handleChange}
-              />
-            </form>
-            {paths.length > 0 ? (
-              <Card className={classes.paths}>
-                {paths.map((path) => (
-                  <Path key={path} data={path} onClick={handlePathChange} />
-                ))}
-              </Card>
-            ) : (
-              <Stack
-                className={classes.stack}
-                data={child}
-                partition={partitionValue}
-                getInfo={getInfo}
-              />
-            )}
-          </div>
-        </div>
-        <Card className={classes.text} variant="outlined">
-          {info && info.length === 1 && (
-            <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
-              <strong>Description: </strong>
-              <span>{info[0]}</span>
-            </Typography>
-          )}
-          {info && info.length === 2 && (
-            <>
-              <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
+        </form>
+        {paths.length > 0 ? (
+          <Container className={classes.paths}>
+            {paths.map((path) => (
+              <Path key={path} data={path} onClick={handlePathChange} />
+            ))}
+          </Container>
+        ) : (
+          <Stack data={child} partition={partitionValue} getInfo={getInfo} />
+        )}
+        <Card className={classes.descAndInfoCard} variant="outlined">
+          <Container className={classes.descContainer} fixed>
+            {info && info.length >= 1 && (
+              <Typography style={{ backgroundColor: '#fff' }}>
                 <strong>Description: </strong>
-                <span>{info[0]}</span>
+                <Typography>{info[0]}</Typography>
               </Typography>
-              <Typography variant="h6" style={{ backgroundColor: '#fff' }}>
-                <strong>Info: </strong>
-                <span>{info[1]}</span>
+            )}
+          </Container>
+          <Divider orientation="vertical" flexItem />
+          <Container className={classes.infoContainer} fixed>
+            {info && info.length === 2 && (
+              <Typography style={{ backgroundColor: '#fff' }}>
+                <strong>Module: </strong>
+                <span>{info[1].split(' ')[1]}</span>
+                <br />
+                <strong>Path: </strong>
+                <span>{info[1].split(' ')[3]}</span>
               </Typography>
-            </>
-          )}
+            )}
+          </Container>
         </Card>
       </div>
     );

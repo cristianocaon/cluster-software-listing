@@ -10,6 +10,10 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     fontFamily: 'Roboto',
   },
+  stack: {
+    height: '33rem',
+    overflowY: 'auto',
+  },
 }));
 
 function Stack({ data, partition, getInfo }) {
@@ -76,7 +80,6 @@ function Stack({ data, partition, getInfo }) {
       setPrevLevel(level);
       setLevel(id + 1);
     }
-    // setFlag(true);
   };
 
   useEffect(() => {
@@ -142,7 +145,7 @@ function Stack({ data, partition, getInfo }) {
 
   if (cards) {
     return (
-      <div ref={cardsRef}>
+      <div style={{ height: '50vh', overflowY: 'auto' }} ref={cardsRef}>
         {cards.map((card, index) => (
           <StackRow
             data={card}
