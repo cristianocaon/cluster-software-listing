@@ -27,6 +27,9 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     margin: '1rem',
   },
+  search: {
+    width: '40%',
+  },
   alert: {
     display: 'flex',
     marginTop: '1rem',
@@ -161,6 +164,7 @@ function App() {
           <div className={classes.stack}>
             <form className={classes.form} noValidate autoComplete="off">
               <TextField
+                className={classes.search}
                 margin="dense"
                 label="Search Applications"
                 variant="outlined"
