@@ -185,23 +185,39 @@ function App() {
         )}
         <Card className={classes.descAndInfoCard} variant="outlined">
           <Container className={classes.descContainer} fixed>
-            {info && info.length >= 1 && (
-              <Typography style={{ backgroundColor: '#fff' }}>
-                <strong>Description: </strong>
-                <Typography>{info[0]}</Typography>
-              </Typography>
+            {info && info.length >= 1 ? (
+              <>
+                <Typography variant={'h6'}>
+                  <strong>Description: </strong>
+                </Typography>
+                <Typography component={'span'} variant={'body2'}>
+                  {info[0]}
+                </Typography>
+              </>
+            ) : (
+              <div></div>
             )}
           </Container>
           <Divider orientation="vertical" flexItem />
           <Container className={classes.infoContainer} fixed>
-            {info && info.length === 2 && (
-              <Typography style={{ backgroundColor: '#fff' }}>
-                <strong>Module: </strong>
-                <span>{info[1].split(' ')[1]}</span>
-                <br />
-                <strong>Path: </strong>
-                <span>{info[1].split(' ')[3]}</span>
-              </Typography>
+            {info && info.length === 2 ? (
+              <>
+                <Typography variant={'h6'}>
+                  <strong>Module: </strong>
+                </Typography>
+                <Typography component={'span'} variant={'body2'}>
+                  {info[1].split(' ')[1]}
+                </Typography>
+                <Divider style={{ margin: '0.5rem' }} />
+                <Typography variant={'h6'}>
+                  <strong>Path: </strong>
+                </Typography>
+                <Typography component={'span'} variant={'body2'}>
+                  {info[1].split(' ')[3]}
+                </Typography>
+              </>
+            ) : (
+              <div></div>
             )}
           </Container>
         </Card>
