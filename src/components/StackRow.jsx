@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     textAlign: 'center',
     marginTop: '10px',
-    backgroundColor: props.level % 2 === 0 ? '#9a8c98' : '#d9d9d9',
+    backgroundColor: props.level % 2 === 0 ? '#5fa8d3' : '#bfdbf7',
   }),
 }));
 

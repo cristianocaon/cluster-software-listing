@@ -11,7 +11,8 @@ const useStyles = makeStyles(() => ({
     },
     backgroundColor: props.backgroundColor,
     color: 'white',
-    border: 0,
+    border: '1',
+    borderColor: '#3f37c9',
     borderRadius: 3,
     margin: '10px',
     marginLeft: '8px',
@@ -22,7 +23,7 @@ const useStyles = makeStyles(() => ({
 
 function StackItem({ data, info, flag, level, onClick, getInfo }) {
   const styleProps = {
-    backgroundColor: flag ? '#06d6a0' : level % 2 === 0 ? '#22223b' : '#335c67',
+    backgroundColor: flag ? '#36e79b' : level % 2 === 0 ? '#003f88' : '#858ae3',
   };
 
   const classes = useStyles(styleProps);
