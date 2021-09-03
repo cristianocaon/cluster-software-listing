@@ -154,8 +154,6 @@ function App() {
         let newInfo = info.slice(0, newLevel - 1).concat(newData);
         setInfo(newInfo);
       } else {
-        console.log(newData);
-        console.log(info);
         let newInfo = info.slice(0, newLevel - 1).concat(newData);
         setInfo(newInfo);
       }
