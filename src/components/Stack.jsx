@@ -147,7 +147,7 @@ function Stack({ data, partition, getInfo }) {
 
   if (cards) {
     return (
-      <div style={{ height: '50vh', overflowY: 'auto' }} ref={cardsRef}>
+      <div style={{ height: '55vh', overflowY: 'auto' }} ref={cardsRef}>
         {cards.map((card, index) => (
           <StackRow
             key={partition + '_' + index + '_' + card}
