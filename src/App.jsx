@@ -72,13 +72,14 @@ function App() {
   const classes = useStyles();
 
   const [data, setData] = useState();
-  const [info, setInfo] = useState();
+  const [info, setInfo] = useState([]);
   const [input, setInput] = useState('');
   const [paths, setPaths] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [partitions, setPartitions] = useState();
   const [headerValue, setHeaderValue] = useState(0);
+  const [description, setDescription] = useState([]);
   const [partitionValue, setPartitionValue] = useState('matador');
 
   useEffect(() => {
@@ -135,11 +136,29 @@ function App() {
     setPartitionValue(partitions[newValue]);
   };
 
-  const getInfo = (info, level) => {
-    if (level % 2 === 0) {
-      setInfo([info]);
+  const getInfo = (newData, newLevel) => {
+    if (newLevel % 2 === 0) {
+      if (newLevel < description.length) {
+        let newInfo = info.slice(0, newLevel);
+        setInfo(newInfo);
+        let newDescription = description.slice(0, newLevel).concat(newData);
+        setDescription(newDescription);
+      } else {
+        let joinedDescription = description.concat(newData);
+        setDescription(joinedDescription);
+      }
     } else {
-      setInfo((prevInfo) => [prevInfo, info]);
+      if (newLevel < description.length) {
+        let newDescription = description.slice(0, newLevel);
+        setDescription(newDescription);
+        let newInfo = info.slice(0, newLevel - 1).concat(newData);
+        setInfo(newInfo);
+      } else {
+        console.log(newData);
+        console.log(info);
+        let newInfo = info.slice(0, newLevel - 1).concat(newData);
+        setInfo(newInfo);
+      }
     }
   };
 
@@ -185,13 +204,13 @@ function App() {
         )}
         <Card className={classes.descAndInfoCard} variant="outlined">
           <Container className={classes.descContainer} fixed>
-            {info && info.length >= 1 ? (
+            {description && description.length > 0 ? (
               <>
                 <Typography variant={'h6'}>
                   <strong>Description: </strong>
                 </Typography>
                 <Typography component={'span'} variant={'body2'}>
-                  {info[0]}
+                  {description[description.length - 1]}
                 </Typography>
               </>
             ) : (
@@ -200,20 +219,20 @@ function App() {
           </Container>
           <Divider orientation="vertical" flexItem />
           <Container className={classes.infoContainer} fixed>
-            {info && info.length === 2 ? (
+            {info && info.length > 0 && info.length === description.length ? (
               <>
                 <Typography variant={'h6'}>
                   <strong>Module: </strong>
                 </Typography>
                 <Typography component={'span'} variant={'body2'}>
-                  {info[1].split(' ')[1]}
+                  {info[info.length - 1].split(' ')[1]}
                 </Typography>
                 <Divider style={{ margin: '0.5rem' }} />
                 <Typography variant={'h6'}>
                   <strong>Path: </strong>
                 </Typography>
                 <Typography component={'span'} variant={'body2'}>
-                  {info[1].split(' ')[3]}
+                  {info[info.length - 1].split(' ')[3]}
                 </Typography>
               </>
             ) : (
