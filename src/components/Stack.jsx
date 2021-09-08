@@ -16,7 +16,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function Stack({ data, partition, getInfo }) {
+export default function Stack({
+  data,
+  partition,
+  handleInfoChange,
+  pathSelected,
+  pathCards,
+}) {
   const classes = useStyles();
 
   const [level, setLevel] = useState(0);
@@ -111,7 +117,7 @@ function Stack({ data, partition, getInfo }) {
         ]);
       }
     }
-  }, [selected, level, prevLevel]);
+  }, [selected, level, prevLevel, pathSelected]);
 
   useEffect(() => {
     let index = level === 0 ? 0 : level - 1;
@@ -145,6 +151,16 @@ function Stack({ data, partition, getInfo }) {
     setSelected([]);
   }, [partition]);
 
+  useEffect(() => {
+    if (pathSelected && pathCards) {
+      setSelected(pathSelected);
+      setCards(pathCards);
+      setLevel(pathSelected.length);
+      setPrevLevel(pathSelected.length - 1);
+      setChanged((prevState) => prevState + 1);
+    }
+  }, [pathSelected, pathCards]);
+
   if (cards) {
     return (
       <div style={{ height: '55vh', overflowY: 'auto' }} ref={cardsRef}>
@@ -156,7 +172,7 @@ function Stack({ data, partition, getInfo }) {
             level={index}
             index={cards.indexOf(card)}
             onClick={handleClick}
-            getInfo={getInfo}
+            handleInfoChange={handleInfoChange}
           />
         ))}
       </div>
@@ -169,5 +185,3 @@ function Stack({ data, partition, getInfo }) {
     );
   }
 }
-
-export default Stack;

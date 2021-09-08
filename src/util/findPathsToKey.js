@@ -1,18 +1,14 @@
-const findPathsToKey = (options) => {
+export default function findPathsToKey(options) {
   let results = [];
 
-  (function findKey({
-    key,
-    obj,
-    pathToKey,
-  }) {
-    const oldPath = `${pathToKey ? pathToKey + "/" : ""}`;
+  (function findKey({ key, obj, pathToKey }) {
+    const oldPath = `${pathToKey ? pathToKey + '/' : ''}`;
     if (obj.hasOwnProperty(key)) {
       results.push(`${oldPath}${key}`);
       return;
     }
 
-    if (obj !== null && typeof obj === "object" && !Array.isArray(obj)) {
+    if (obj !== null && typeof obj === 'object' && !Array.isArray(obj)) {
       for (const k in obj) {
         if (obj.hasOwnProperty(k)) {
           if (Array.isArray(obj[k])) {
@@ -25,7 +21,7 @@ const findPathsToKey = (options) => {
             }
           }
 
-          if (obj[k] !== null && typeof obj[k] === "object") {
+          if (obj[k] !== null && typeof obj[k] === 'object') {
             findKey({
               obj: obj[k],
               key,
@@ -39,5 +35,3 @@ const findPathsToKey = (options) => {
 
   return results;
 }
-
-export default findPathsToKey

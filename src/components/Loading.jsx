@@ -5,24 +5,21 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    width: "100%",
-    height: "50vh",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '100%',
+    height: '50vh',
+    justifyContent: 'center',
+    alignItems: 'center',
     '& > * + *': {
       marginLeft: theme.spacing(2),
     },
-
   },
 }));
 
-const Loading = () => {
+export default function Loading() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <CircularProgress />
     </div>
-  )
+  );
 }
-
-export default Loading

@@ -1,19 +1,18 @@
-// import axios from 'axios'
+// import axios from 'axios';
 
 // const PROTO = 'https://';
 // const ADDR = 'cluster.hpcc.ttu.edu';
-// const PORT = '80';
+// // const PORT = '80';
 // const PAGE = '/app-list/stack';
 
-// const getData = async (setData, setLoading, setError) => {
-//   let url = PROTO + ADDR + ':' + PORT + PAGE;
+// export default async function getData(setData, setLoading, setError) {
+//   let url = PROTO + ADDR + PAGE;
 
 //   try {
-//     const { data } = await axios.get(url)
+//     const { data } = await axios.get(url);
 //     console.log(data);
 //     if (!data.error) {
-//       let { charts, partitions } = data;
-//       setData({ charts, partitions });
+//       setData(data);
 //     } else {
 //       setError(data.error);
 //     }
@@ -21,14 +20,12 @@
 //   } catch (err) {
 //     console.error(err.message);
 //   }
-// };
+// }
 
 import data from './lmod_stack.json';
 
-function getData(setData, setLoading, setError) {
+export default function getData(setData, setLoading, setError) {
   setData(data);
   setLoading(false);
   return data;
 }
-
-export default getData;

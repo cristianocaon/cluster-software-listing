@@ -21,7 +21,14 @@ const useStyles = makeStyles(() => ({
   }),
 }));
 
-function StackItem({ data, info, flag, level, onClick, getInfo }) {
+export default function StackItem({
+  data,
+  info,
+  flag,
+  level,
+  onClick,
+  handleInfoChange,
+}) {
   const styleProps = {
     color: flag ? '#0019ff' : '#fbffef',
     backgroundColor: flag ? '#36e79b' : level % 2 === 0 ? '#003f88' : '#858ae3',
@@ -36,7 +43,7 @@ function StackItem({ data, info, flag, level, onClick, getInfo }) {
       variant="outlined"
       onClick={(event) => {
         onClick(event);
-        getInfo(info, level);
+        handleInfoChange(info, level);
       }}
       disableElevation={true}
     >
@@ -44,5 +51,3 @@ function StackItem({ data, info, flag, level, onClick, getInfo }) {
     </Button>
   );
 }
-
-export default StackItem;
