@@ -68,7 +68,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function App() {
+export default function App() {
   const classes = useStyles();
 
   const [data, setData] = useState();
@@ -77,6 +77,8 @@ function App() {
   const [paths, setPaths] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [pathCards, setPathCards] = useState();
+  const [pathSelected, setPathSelected] = useState();
   const [partitions, setPartitions] = useState();
   const [headerValue, setHeaderValue] = useState(0);
   const [description, setDescription] = useState([]);
@@ -165,11 +167,96 @@ function App() {
   };
 
   const handlePathChange = (event) => {
+    let { child } = data[partitionValue].versions['0.15.4'];
     let temp = event.target.innerText.split('/').join();
     temp = temp.split(' >>> ');
-    console.log(temp);
+    temp = temp.map((child) => child.split(','));
+
+    let keys = [];
+    for (let i = 0; i < temp.length; i++) {
+      keys = keys.concat(temp[i]);
+    }
+
+    let paths = [];
+    for (let i = 0; i < keys.length; i++) {
+      if (paths.length === 0) {
+        paths.push([keys[0]]);
+        continue;
+      }
+      let temp = [];
+      for (let j = 0; j < paths[i - 1].length; j++) {
+        temp.push(paths[i - 1][j]);
+      }
+      if (i % 2 === 0) temp.push('child');
+      else temp.push('versions');
+      temp.push(keys[i]);
+      paths.push(temp);
+    }
+
+    let selected = [];
+    for (let i = 0; i < paths.length; i++) {
+      if (i % 2 === 0) {
+        selected.push(_.get(child, paths[i]).versions);
+      } else {
+        selected.push(_.get(child, paths[i]).child);
+      }
+    }
+
+    let cards = [];
+    let field = Object.keys(child).map((key) => {
+      let info = child[key].info;
+      let flag = keys.includes(key) ? true : false;
+      return [key, info, flag];
+    });
+
+    cards.push(field);
+
+    for (let i = 0; i < selected.length; i++) {
+      let lastSelected = selected[i];
+      let field;
+      if (i % 2 === 0) {
+        field = Object.keys(lastSelected).map((key) => {
+          let path = lastSelected[key].path;
+          let module = lastSelected[key].module_name;
+          let info = 'module: ' + module + ' path: ' + path;
+          let flag = keys.includes(key) ? true : false;
+          return [key, info, flag];
+        });
+      } else {
+        if (selected.length !== 0) {
+          field = Object.keys(lastSelected).map((key) => {
+            let info = lastSelected[key].info;
+            let flag = keys.includes(key) ? true : false;
+            return [key, info, flag];
+          });
+        }
+      }
+      cards.push(field);
+    }
+    cards.pop();
+
+    let descriptions = [];
+    let infos = [];
+    for (let i = 0; i < cards.length; i++) {
+      for (let j = 0; j < cards[i].length; j++) {
+        if (cards[i][j][2]) {
+          if (i % 2 === 0) {
+            descriptions.push(cards[i][j][1]);
+          } else {
+            infos.push(cards[i][j][1]);
+          }
+        }
+      }
+    }
+
+    setDescription(descriptions);
+    setInfo(infos);
+    setPathSelected(selected);
+    setPathCards(cards);
     setPaths([]);
   };
+
+  // console.log(pathCards);
 
   if (!error && data) {
     let { child } = data[partitionValue].versions['0.15.4'];
@@ -198,7 +285,13 @@ function App() {
             ))}
           </Container>
         ) : (
-          <Stack data={child} partition={partitionValue} getInfo={getInfo} />
+          <Stack
+            data={child}
+            partition={partitionValue}
+            getInfo={getInfo}
+            pathSelected={pathSelected}
+            pathCards={pathCards}
+          />
         )}
         <Card className={classes.descAndInfoCard} variant="outlined">
           <Container className={classes.descContainer} fixed>
@@ -248,5 +341,3 @@ function App() {
     );
   }
 }
-
-export default App;

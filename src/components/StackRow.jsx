@@ -13,7 +13,15 @@ const useStyles = makeStyles(() => ({
   }),
 }));
 
-function StackRow({ data, partition, level, flag, index, onClick, getInfo }) {
+export default function StackRow({
+  data,
+  partition,
+  level,
+  flag,
+  index,
+  onClick,
+  getInfo,
+}) {
   const classes = useStyles({ level: level });
 
   return (
@@ -38,5 +46,3 @@ function StackRow({ data, partition, level, flag, index, onClick, getInfo }) {
     </Card>
   );
 }
-
-export default StackRow;

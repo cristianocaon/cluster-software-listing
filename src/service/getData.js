@@ -25,10 +25,8 @@
 
 import data from './lmod_stack.json';
 
-function getData(setData, setLoading, setError) {
+export default function getData(setData, setLoading, setError) {
   setData(data);
   setLoading(false);
   return data;
 }
-
-export default getData;

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }),
 }));
 
-function Path({ data, onClick }) {
+export default function Path({ data, onClick }) {
   const classes = useStyles({ backgroundColor: '#3d2f8d' });
 
   return (
@@ -37,5 +37,3 @@ function Path({ data, onClick }) {
     </Button>
   );
 }
-
-export default Path;
