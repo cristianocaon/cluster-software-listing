@@ -27,7 +27,11 @@ export default function StackItem({
   flag,
   level,
   onClick,
+<<<<<<< HEAD
   handleInfoChange,
+=======
+  getInfo,
+>>>>>>> c6434d7e9f4c52460d0cc55588bca89c8548fa38
 }) {
   const styleProps = {
     color: flag ? '#0019ff' : '#fbffef',
