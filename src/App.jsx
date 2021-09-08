@@ -256,6 +256,8 @@ export default function App() {
     setPaths([]);
   };
 
+  // console.log(pathCards);
+
   if (!error && data) {
     let { child } = data[partitionValue].versions['0.15.4'];
     if (loading) return <Loading />;
