@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Loading from './components/Loading';
 import Stack from './components/Stack';
 import Description from './components/Description';
+import Grow from '@material-ui/core/Grow';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import { Alert, AlertTitle } from '@material-ui/lab';
@@ -248,6 +249,7 @@ export default function App() {
     }
 
     setDescription(descriptions);
+    setInput('');
     setInfo(infos);
     setPathSelected(selected);
     setPathCards(cards);
@@ -258,6 +260,13 @@ export default function App() {
     setInfo([]);
     setDescription([]);
   }, [partitionValue]);
+
+  useEffect(() => {
+    if (paths.length !== 0) {
+      setInfo([]);
+      setDescription([]);
+    }
+  }, [paths]);
 
   if (!error && data) {
     let { child } = data[partitionValue].versions['0.15.4'];
@@ -280,11 +289,13 @@ export default function App() {
           />
         </form>
         {paths.length > 0 ? (
-          <Container className={classes.paths}>
-            {paths.map((path) => (
-              <Path key={path} data={path} onClick={handlePathChange} />
-            ))}
-          </Container>
+          <Grow in={true} timeout={1000}>
+            <Container className={classes.paths}>
+              {paths.map((path) => (
+                <Path key={path} data={path} onClick={handlePathChange} />
+              ))}
+            </Container>
+          </Grow>
         ) : (
           <Stack
             data={child}

@@ -1,5 +1,6 @@
 import React from 'react';
 import StackItem from './StackItem';
+import Grow from '@material-ui/core/Grow';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -24,24 +25,26 @@ export default function StackRow({
   const classes = useStyles({ level: level });
 
   return (
-    <Card
-      key={partition + '_' + index + '_' + level}
-      className={classes.card}
-      id={level}
-    >
-      {data.map((field) => {
-        return (
-          <StackItem
-            key={partition + '_' + field[0] + '_' + level}
-            data={field[0]}
-            info={field[1]}
-            flag={field[2]}
-            level={level}
-            onClick={onClick}
-            handleInfoChange={handleInfoChange}
-          />
-        );
-      })}
-    </Card>
+    <Grow in={true} timeout={500}>
+      <Card
+        key={partition + '_' + index + '_' + level}
+        className={classes.card}
+        id={level}
+      >
+        {data.map((field) => {
+          return (
+            <StackItem
+              key={partition + '_' + field[0] + '_' + level}
+              data={field[0]}
+              info={field[1]}
+              flag={field[2]}
+              level={level}
+              onClick={onClick}
+              handleInfoChange={handleInfoChange}
+            />
+          );
+        })}
+      </Card>
+    </Grow>
   );
 }
