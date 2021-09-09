@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import { Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-import Collapse from '@material-ui/core/Collapse';
+import Grow from '@material-ui/core/Grow';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,15 +19,8 @@ const useStyles = makeStyles(() => ({
 export default function TutorialBox({ clicked }) {
   const classes = useStyles();
 
-  const [display, setDisplay] = useState(false);
-
-  useEffect(() => {
-    if (clicked === '') setDisplay(true);
-    else setDisplay(false);
-  }, [clicked]);
-
   return (
-    <Collapse in={display} timeout={1000}>
+    <Grow in={true} timeout={1000}>
       <Card className={classes.box}>
         <Typography>
           Perform the following operations to find the desired outcome:
@@ -45,6 +37,6 @@ export default function TutorialBox({ clicked }) {
           bottom.
         </Typography>
       </Card>
-    </Collapse>
+    </Grow>
   );
 }
