@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import StackRow from './StackRow';
+import TutorialBox from './TutorialBox';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -149,6 +150,7 @@ export default function Stack({
     setLevel(0);
     setPrevLevel(-1);
     setSelected([]);
+    setClicked('');
   }, [partition]);
 
   useEffect(() => {
@@ -165,15 +167,18 @@ export default function Stack({
     return (
       <div style={{ height: '55vh', overflowY: 'auto' }} ref={cardsRef}>
         {cards.map((card, index) => (
-          <StackRow
-            key={partition + '_' + index + '_' + card}
-            data={card}
-            partition={partition}
-            level={index}
-            index={cards.indexOf(card)}
-            onClick={handleClick}
-            handleInfoChange={handleInfoChange}
-          />
+          <>
+            <StackRow
+              key={partition + '_' + index + '_' + card}
+              data={card}
+              partition={partition}
+              level={index}
+              index={cards.indexOf(card)}
+              onClick={handleClick}
+              handleInfoChange={handleInfoChange}
+            />
+            {clicked === '' && level === 0 && <TutorialBox clicked={clicked} />}
+          </>
         ))}
       </div>
     );
