@@ -25,7 +25,7 @@ export default function StackRow({
   const classes = useStyles({ level: level });
 
   return (
-    <Grow in={true} timeout={500}>
+    <Grow in={true} timeout={700}>
       <Card
         key={partition + '_' + index + '_' + level}
         className={classes.card}
