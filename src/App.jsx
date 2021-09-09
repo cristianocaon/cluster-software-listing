@@ -3,11 +3,9 @@ import Path from './components/Path';
 import Header from './components/Header';
 import Loading from './components/Loading';
 import Stack from './components/Stack';
-import Card from '@material-ui/core/Card';
+import Description from './components/Description';
 import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -256,6 +254,11 @@ export default function App() {
     setPaths([]);
   };
 
+  useEffect(() => {
+    setInfo([]);
+    setDescription([]);
+  }, [partitionValue]);
+
   if (!error && data) {
     let { child } = data[partitionValue].versions['0.15.4'];
     if (loading) return <Loading />;
@@ -291,44 +294,7 @@ export default function App() {
             pathCards={pathCards}
           />
         )}
-        <Card className={classes.descAndInfoCard} variant="outlined">
-          <Container className={classes.descContainer} fixed>
-            {description && description.length > 0 ? (
-              <>
-                <Typography variant={'h6'}>
-                  <strong>Description: </strong>
-                </Typography>
-                <Typography component={'span'} variant={'body2'}>
-                  {description[description.length - 1]}
-                </Typography>
-              </>
-            ) : (
-              <div></div>
-            )}
-          </Container>
-          <Divider orientation="vertical" flexItem />
-          <Container className={classes.infoContainer} fixed>
-            {info && info.length > 0 && info.length === description.length ? (
-              <>
-                <Typography variant={'h6'}>
-                  <strong>Module: </strong>
-                </Typography>
-                <Typography component={'span'} variant={'body2'}>
-                  {info[info.length - 1].split(' ')[1]}
-                </Typography>
-                <Divider style={{ margin: '0.5rem' }} />
-                <Typography variant={'h6'}>
-                  <strong>Path: </strong>
-                </Typography>
-                <Typography component={'span'} variant={'body2'}>
-                  {info[info.length - 1].split(' ')[3]}
-                </Typography>
-              </>
-            ) : (
-              <div></div>
-            )}
-          </Container>
-        </Card>
+        <Description description={description} info={info} />
       </div>
     );
   } else {
