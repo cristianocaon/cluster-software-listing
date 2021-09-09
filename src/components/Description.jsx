@@ -36,8 +36,6 @@ export default function Description({ description, info }) {
     else setDisplay(false);
   }, [description]);
 
-  console.log(display);
-
   return (
     <Slide direction="up" in={display} timeout={1000}>
       <Card className={classes.descAndInfoCard} variant="outlined">
