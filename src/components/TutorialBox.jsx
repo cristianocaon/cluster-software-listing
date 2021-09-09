@@ -27,8 +27,6 @@ export default function TutorialBox({ clicked }) {
     else setDisplay(false);
   }, [clicked]);
 
-  console.log(display);
-
   return (
     <Collapse in={display} timeout={1000}>
       <Card className={classes.box}>
