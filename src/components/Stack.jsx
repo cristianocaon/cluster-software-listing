@@ -37,25 +37,36 @@ export default function Stack({
 
   const cardsRef = useRef();
 
-  const handleClick = (event) => {
+  const handleClick = (event, btnRef) => {
     let rows = cardsRef.current.childNodes;
     let currBtn = event.target.innerText;
 
     setClicked(currBtn);
 
-    let curr;
+    let curr = [];
     for (let i = 0; i < rows.length; i++) {
       let rowItems = rows[i].childNodes;
       for (let j = 0; j < rowItems.length; j++) {
         if (currBtn === rowItems[j].textContent) {
-          curr = rowItems[j].parentElement;
+          curr.push(rowItems[j].parentElement);
+        }
+      }
+    }
+
+    if (curr.length > 1) {
+      for (let i = 0; i < curr.length; i++) {
+        if (
+          curr[i].attributes[1].nodeValue ===
+          btnRef.current.attributes[3].nodeValue
+        ) {
+          curr[0] = curr[i];
         }
       }
     }
 
     let id;
     for (let i = 0; i < rows.length; i++) {
-      if (curr.textContent === rows[i].textContent) {
+      if (curr[0].textContent === rows[i].textContent) {
         id = i;
       }
     }
@@ -100,13 +111,13 @@ export default function Stack({
         let path = lastSelected[key].path;
         let module = lastSelected[key].module_name;
         let info = 'module: ' + module + ' path: ' + path;
-        return [key, info, false];
+        return [key, info, false, level];
       });
     } else {
       if (selected.length !== 0)
         fields = Object.keys(lastSelected).map((key) => {
           let info = lastSelected[key].info;
-          return [key, info, false];
+          return [key, info, false, level];
         });
     }
 
@@ -148,7 +159,7 @@ export default function Stack({
   useEffect(() => {
     let fields = Object.keys(data).map((key) => {
       let info = data[key].info;
-      return [key, info, false];
+      return [key, info, false, level];
     });
     setCards([fields]);
     setLevel(0);

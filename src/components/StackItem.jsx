@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -36,13 +36,17 @@ export default function StackItem({
 
   const classes = useStyles(styleProps);
 
+  const btnRef = useRef();
+
   return (
     <Button
+      id={level}
+      ref={btnRef}
       key={data}
       className={classes.button}
       variant="outlined"
       onClick={(event) => {
-        onClick(event);
+        onClick(event, btnRef);
         handleInfoChange(info, level);
       }}
       disableElevation={true}
