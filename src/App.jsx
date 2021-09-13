@@ -204,7 +204,7 @@ export default function App() {
     let cards = [];
     let field = Object.keys(child).map((key) => {
       let info = child[key].info;
-      let flag = keys.includes(key) ? true : false;
+      let flag = keys.includes(key);
       return [key, info, flag];
     });
 
@@ -218,14 +218,14 @@ export default function App() {
           let path = lastSelected[key].path;
           let module = lastSelected[key].module_name;
           let info = 'module: ' + module + ' path: ' + path;
-          let flag = keys.includes(key) ? true : false;
+          let flag = keys.includes(key);
           return [key, info, flag];
         });
       } else {
         if (selected.length !== 0) {
           field = Object.keys(lastSelected).map((key) => {
             let info = lastSelected[key].info;
-            let flag = keys.includes(key) ? true : false;
+            let flag = keys.includes(key);
             return [key, info, flag];
           });
         }
@@ -303,6 +303,8 @@ export default function App() {
             handleInfoChange={handleInfoChange}
             pathSelected={pathSelected}
             pathCards={pathCards}
+            setPathCards={setPathCards}
+            setPathSelected={setPathSelected}
           />
         )}
         <Description description={description} info={info} />

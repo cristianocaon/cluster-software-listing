@@ -23,6 +23,8 @@ export default function Stack({
   handleInfoChange,
   pathSelected,
   pathCards,
+  setPathCards,
+  setPathSelected,
 }) {
   const classes = useStyles();
 
@@ -126,12 +128,16 @@ export default function Stack({
     if (currRow) {
       for (let i = 0; i < currRow.length; i++) {
         let currBtn = currRow[i];
-        if (currBtn[2] === true) {
+        if (currBtn[2] === true && typeof pathCards === 'undefined') {
           currBtn[2] = false;
         }
         if (currBtn[0] === clicked) {
           currBtn[2] = true;
         }
+      }
+      if (pathCards && pathSelected) {
+        setPathCards();
+        setPathSelected();
       }
       setChanged((prevState) => prevState + 1);
     }
