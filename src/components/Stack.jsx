@@ -140,6 +140,8 @@ export default function Stack({
         setPathSelected();
       }
       setChanged((prevState) => prevState + 1);
+      setPathCards();
+      setPathSelected();
     }
   }, [cards, clicked, level]);
 
