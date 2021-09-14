@@ -53,20 +53,23 @@ export default function Stack({
       }
     }
 
+    let currTemp;
     if (curr.length > 1) {
       for (let i = 0; i < curr.length; i++) {
         if (
           curr[i].attributes[1].nodeValue ===
           btnRef.current.attributes[3].nodeValue
         ) {
-          curr[0] = curr[i];
+          currTemp = curr[i];
         }
       }
+    } else {
+      currTemp = curr[0];
     }
 
     let id;
     for (let i = 0; i < rows.length; i++) {
-      if (curr[0].textContent === rows[i].textContent) {
+      if (currTemp.textContent === rows[i].textContent) {
         id = i;
       }
     }

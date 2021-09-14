@@ -3826,9 +3826,9 @@
             "centos-7.4": {
                 "child": {
                     "ampl": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "20180822 ": {
+                            "20180822": {
                                 "child": {},
                                 "module_name": "ampl/v20180822",
                                 "path": "/opt/apps/nfs/module/modulefiles/ampl/v20180822",
@@ -3837,15 +3837,15 @@
                         }
                     },
                     "ansys": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "v193 ": {
+                            "v193": {
                                 "child": {},
                                 "module_name": "ansys/v193",
                                 "path": "/opt/apps/nfs/module/modulefiles/ansys/v193",
                                 "version_no": "v193 "
                             },
-                            "v195 ": {
+                            "v195": {
                                 "child": {},
                                 "module_name": "ansys/v195",
                                 "path": "/opt/apps/nfs/module/modulefiles/ansys/v195",
@@ -3854,9 +3854,9 @@
                         }
                     },
                     "cadence": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "171 ": {
+                            "171": {
                                 "child": {},
                                 "module_name": "cadence/v171",
                                 "path": "/opt/apps/nfs/module/modulefiles/cadence/v171",
@@ -3873,7 +3873,7 @@
                                 "path": "/opt/ohpc/pub/modulefiles/cmake/.version.3.10.2",
                                 "version_no": ".version.3.10.2"
                             },
-                            "3.10.2 ": {
+                            "3.10.2": {
                                 "child": {},
                                 "module_name": "cmake/3.10.2",
                                 "path": "/opt/ohpc/pub/modulefiles/cmake/3.10.2",
@@ -3884,7 +3884,7 @@
                     "eigen": {
                         "info": "A C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. ",
                         "versions": {
-                            "3.2.10 ": {
+                            "3.2.10": {
                                 "child": {},
                                 "module_name": "eigen/3.2.10",
                                 "path": "/opt/ohpc/pub/modulefiles/eigen/3.2.10",
@@ -3895,7 +3895,7 @@
                     "fsl": {
                         "info": "A C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data ",
                         "versions": {
-                            "6.0.0 ": {
+                            "6.0.0": {
                                 "child": {},
                                 "module_name": "fsl/6.0.0",
                                 "path": "/opt/apps/nfs/module/modulefiles/fsl/6.0.0",
@@ -3915,7 +3915,7 @@
                             "5.4.0": {
                                 "child": {
                                     "EMBOSS": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "6.6.0": {
                                                 "child": {},
@@ -3926,7 +3926,7 @@
                                         }
                                     },
                                     "ImageMagick": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "7.0.7": {
                                                 "child": {},
@@ -3937,7 +3937,7 @@
                                         }
                                     },
                                     "R": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.5.0-gnu": {
                                                 "child": {},
@@ -3948,7 +3948,7 @@
                                         }
                                     },
                                     "ViennaRNA": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.4.6": {
                                                 "child": {},
@@ -3959,7 +3959,7 @@
                                         }
                                     },
                                     "bamtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.5.1": {
                                                 "child": {},
@@ -3970,7 +3970,7 @@
                                         }
                                     },
                                     "bcftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.3.1": {
                                                 "child": {},
@@ -3981,7 +3981,7 @@
                                         }
                                     },
                                     "bedtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.27.1": {
                                                 "child": {},
@@ -3992,7 +3992,7 @@
                                         }
                                     },
                                     "bowtie2": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.3.4": {
                                                 "child": {},
@@ -4003,7 +4003,7 @@
                                         }
                                     },
                                     "bwa": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.7.17": {
                                                 "child": {},
@@ -4014,7 +4014,7 @@
                                         }
                                     },
                                     "clustalw": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.1": {
                                                 "child": {},
@@ -4025,7 +4025,7 @@
                                         }
                                     },
                                     "cmake": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.10.3": {
                                                 "child": {},
@@ -4036,7 +4036,7 @@
                                         }
                                     },
                                     "exonerate": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.0": {
                                                 "child": {},
@@ -4047,7 +4047,7 @@
                                         }
                                     },
                                     "fastx-toolkit": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.0.14": {
                                                 "child": {},
@@ -4058,7 +4058,7 @@
                                         }
                                     },
                                     "gdal": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.3": {
                                                 "child": {},
@@ -4069,7 +4069,7 @@
                                         }
                                     },
                                     "geos": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.6.2": {
                                                 "child": {},
@@ -4080,7 +4080,7 @@
                                         }
                                     },
                                     "gnuplot": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "5.2.2": {
                                                 "child": {},
@@ -4091,7 +4091,7 @@
                                         }
                                     },
                                     "gsl": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.4": {
                                                 "child": {},
@@ -4102,7 +4102,7 @@
                                         }
                                     },
                                     "hdf5": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             ".version.1.8.17": {
                                                 "child": {},
@@ -4136,7 +4136,7 @@
                                             "2018.3.222": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -4147,7 +4147,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.63.0": {
                                                                 "child": {},
@@ -4164,7 +4164,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -4175,7 +4175,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -4186,7 +4186,7 @@
                                                         }
                                                     },
                                                     "mafft": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "7.402": {
                                                                 "child": {},
@@ -4197,7 +4197,7 @@
                                                         }
                                                     },
                                                     "netcdf": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.4.4.1.1": {
                                                                 "child": {},
@@ -4214,7 +4214,7 @@
                                                         }
                                                     },
                                                     "phdf5": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.8.17": {
                                                                 "child": {},
@@ -4238,7 +4238,7 @@
                                         }
                                     },
                                     "lapack": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.8.0": {
                                                 "child": {},
@@ -4249,7 +4249,7 @@
                                         }
                                     },
                                     "libgtextutils": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.7": {
                                                 "child": {},
@@ -4260,7 +4260,7 @@
                                         }
                                     },
                                     "libint": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.1.5": {
                                                 "child": {},
@@ -4271,7 +4271,7 @@
                                         }
                                     },
                                     "libxc": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.2.1": {
                                                 "child": {},
@@ -4282,7 +4282,7 @@
                                         }
                                     },
                                     "libxsmm": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.9": {
                                                 "child": {},
@@ -4293,7 +4293,7 @@
                                         }
                                     },
                                     "maftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.1": {
                                                 "child": {},
@@ -4304,7 +4304,7 @@
                                         }
                                     },
                                     "mkl": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "18.0.3.222": {
                                                 "child": {},
@@ -4326,7 +4326,7 @@
                                             "2.2": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -4337,7 +4337,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.63.0": {
                                                                 "child": {},
@@ -4354,7 +4354,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -4365,7 +4365,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -4376,7 +4376,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -4394,7 +4394,7 @@
                                         }
                                     },
                                     "ncbi-vdb": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.9.0rc": {
                                                 "child": {},
@@ -4405,7 +4405,7 @@
                                         }
                                     },
                                     "ncl_ncarg": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "6.4.0": {
                                                 "child": {},
@@ -4416,7 +4416,7 @@
                                         }
                                     },
                                     "nco": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.7.3": {
                                                 "child": {},
@@ -4427,7 +4427,7 @@
                                         }
                                     },
                                     "netcdf-serial": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.1.3": {
                                                 "child": {},
@@ -4438,7 +4438,7 @@
                                         }
                                     },
                                     "ngs": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.9.0rc": {
                                                 "child": {},
@@ -4449,7 +4449,7 @@
                                         }
                                     },
                                     "openblas": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             ".version.0.2.19": {
                                                 "child": {},
@@ -4477,7 +4477,7 @@
                                             "1.10.6": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -4488,7 +4488,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.63.0": {
                                                                 "child": {},
@@ -4505,7 +4505,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -4516,7 +4516,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -4527,7 +4527,7 @@
                                                         }
                                                     },
                                                     "mafft": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "7.402": {
                                                                 "child": {},
@@ -4538,7 +4538,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -4556,7 +4556,7 @@
                                         }
                                     },
                                     "proj": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "5.0.1": {
                                                 "child": {},
@@ -4567,7 +4567,7 @@
                                         }
                                     },
                                     "python2": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.7.14": {
                                                 "child": {},
@@ -4578,7 +4578,7 @@
                                         }
                                     },
                                     "python3": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.6.4": {
                                                 "child": {},
@@ -4589,7 +4589,7 @@
                                         }
                                     },
                                     "rmblast": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.6.0": {
                                                 "child": {},
@@ -4600,7 +4600,7 @@
                                         }
                                     },
                                     "samtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.3.1": {
                                                 "child": {},
@@ -4611,7 +4611,7 @@
                                         }
                                     },
                                     "sparsehash": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.0.3": {
                                                 "child": {},
@@ -4622,7 +4622,7 @@
                                         }
                                     },
                                     "udunits": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.26": {
                                                 "child": {},
@@ -4633,7 +4633,7 @@
                                         }
                                     },
                                     "vcftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.1.13": {
                                                 "child": {},
@@ -4644,7 +4644,7 @@
                                         }
                                     },
                                     "voro++": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.4.6": {
                                                 "child": {},
@@ -4655,7 +4655,7 @@
                                         }
                                     },
                                     "vsearch": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.3.0": {
                                                 "child": {},
@@ -4666,12 +4666,6 @@
                                         }
                                     }
                                 },
-                                "module_name": "",
-                                "path": "",
-                                "version_no": ""
-                            },
-                            "5.4.0 ": {
-                                "child": {},
                                 "module_name": "gnu/5.4.0",
                                 "path": "/opt/ohpc/pub/modulefiles/gnu/5.4.0",
                                 "version_no": "5.4.0 "
@@ -4690,7 +4684,7 @@
                             "7.3.0": {
                                 "child": {
                                     "EMBOSS": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "6.6.0": {
                                                 "child": {},
@@ -4701,7 +4695,7 @@
                                         }
                                     },
                                     "ImageMagick": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "7.0.7": {
                                                 "child": {},
@@ -4712,7 +4706,7 @@
                                         }
                                     },
                                     "R": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.5.0-gnu7": {
                                                 "child": {},
@@ -4723,7 +4717,7 @@
                                         }
                                     },
                                     "ViennaRNA": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.4.6": {
                                                 "child": {},
@@ -4734,7 +4728,7 @@
                                         }
                                     },
                                     "bamtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.5.1": {
                                                 "child": {},
@@ -4745,7 +4739,7 @@
                                         }
                                     },
                                     "bcftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.3.1": {
                                                 "child": {},
@@ -4756,7 +4750,7 @@
                                         }
                                     },
                                     "bedtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.27.1": {
                                                 "child": {},
@@ -4767,7 +4761,7 @@
                                         }
                                     },
                                     "bwa": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.7.17": {
                                                 "child": {},
@@ -4778,7 +4772,7 @@
                                         }
                                     },
                                     "clustalw": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.1": {
                                                 "child": {},
@@ -4789,7 +4783,7 @@
                                         }
                                     },
                                     "cmake": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.10.3": {
                                                 "child": {},
@@ -4800,7 +4794,7 @@
                                         }
                                     },
                                     "exonerate": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.0": {
                                                 "child": {},
@@ -4811,7 +4805,7 @@
                                         }
                                     },
                                     "gdal": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.3": {
                                                 "child": {},
@@ -4822,7 +4816,7 @@
                                         }
                                     },
                                     "geos": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.6.2": {
                                                 "child": {},
@@ -4833,7 +4827,7 @@
                                         }
                                     },
                                     "gnuplot": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "5.2.2": {
                                                 "child": {},
@@ -4844,7 +4838,7 @@
                                         }
                                     },
                                     "gsl": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.4": {
                                                 "child": {},
@@ -4855,7 +4849,7 @@
                                         }
                                     },
                                     "hdf5": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             ".version.1.10.1": {
                                                 "child": {},
@@ -4889,7 +4883,7 @@
                                             "2018.3.222": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -4900,7 +4894,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.66.0": {
                                                                 "child": {},
@@ -4917,7 +4911,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -4928,7 +4922,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -4939,7 +4933,7 @@
                                                         }
                                                     },
                                                     "mafft": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "7.402": {
                                                                 "child": {},
@@ -4950,7 +4944,7 @@
                                                         }
                                                     },
                                                     "netcdf": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.4.5.0": {
                                                                 "child": {},
@@ -4967,7 +4961,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -4978,7 +4972,7 @@
                                                         }
                                                     },
                                                     "phdf5": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.10.1": {
                                                                 "child": {},
@@ -5002,7 +4996,7 @@
                                         }
                                     },
                                     "lapack": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.8.0": {
                                                 "child": {},
@@ -5013,7 +5007,7 @@
                                         }
                                     },
                                     "libint": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.1.5": {
                                                 "child": {},
@@ -5024,7 +5018,7 @@
                                         }
                                     },
                                     "libxc": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.2.1": {
                                                 "child": {},
@@ -5035,7 +5029,7 @@
                                         }
                                     },
                                     "libxsmm": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.9": {
                                                 "child": {},
@@ -5057,7 +5051,7 @@
                                             "2.2": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -5068,7 +5062,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.66.0": {
                                                                 "child": {},
@@ -5085,7 +5079,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -5096,7 +5090,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -5107,7 +5101,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -5125,7 +5119,7 @@
                                         }
                                     },
                                     "ncbi-vdb": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.9.0rc": {
                                                 "child": {},
@@ -5136,7 +5130,7 @@
                                         }
                                     },
                                     "ngs": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.9.0rc": {
                                                 "child": {},
@@ -5147,7 +5141,7 @@
                                         }
                                     },
                                     "openblas": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             ".version.0.2.20": {
                                                 "child": {},
@@ -5175,7 +5169,7 @@
                                             "1.10.7": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -5186,7 +5180,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.63.0": {
                                                                 "child": {},
@@ -5203,7 +5197,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -5214,7 +5208,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -5225,7 +5219,7 @@
                                                         }
                                                     },
                                                     "mafft": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "7.402": {
                                                                 "child": {},
@@ -5236,7 +5230,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -5254,7 +5248,7 @@
                                         }
                                     },
                                     "proj": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "5.0.1": {
                                                 "child": {},
@@ -5265,7 +5259,7 @@
                                         }
                                     },
                                     "python2": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.7.14": {
                                                 "child": {},
@@ -5276,7 +5270,7 @@
                                         }
                                     },
                                     "python3": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.6.4": {
                                                 "child": {},
@@ -5287,7 +5281,7 @@
                                         }
                                     },
                                     "rmblast": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.6.0": {
                                                 "child": {},
@@ -5298,7 +5292,7 @@
                                         }
                                     },
                                     "samtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.3.1": {
                                                 "child": {},
@@ -5309,7 +5303,7 @@
                                         }
                                     },
                                     "sparsehash": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.0.3": {
                                                 "child": {},
@@ -5320,7 +5314,7 @@
                                         }
                                     },
                                     "udunits": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.26": {
                                                 "child": {},
@@ -5331,7 +5325,7 @@
                                         }
                                     },
                                     "vcftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.1.13": {
                                                 "child": {},
@@ -5342,7 +5336,7 @@
                                         }
                                     },
                                     "voro++": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.4.6": {
                                                 "child": {},
@@ -5353,7 +5347,7 @@
                                         }
                                     },
                                     "vsearch": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.3.0": {
                                                 "child": {},
@@ -5364,12 +5358,6 @@
                                         }
                                     }
                                 },
-                                "module_name": "",
-                                "path": "",
-                                "version_no": ""
-                            },
-                            "7.3.0 ": {
-                                "child": {},
                                 "module_name": "gnu7/7.3.0",
                                 "path": "/opt/ohpc/pub/modulefiles/gnu7/7.3.0",
                                 "version_no": "7.3.0 "
@@ -5379,7 +5367,7 @@
                     "grads": {
                         "info": "The Grid Analysis and Display System (GrADS) is an interactive desktop tool that is used for easy access, manipulation, and visualization of earth science data. ",
                         "versions": {
-                            "2.2.1 ": {
+                            "2.2.1": {
                                 "child": {},
                                 "module_name": "grads/2.2.1",
                                 "path": "/opt/apps/nfs/module/modulefiles/grads/2.2.1",
@@ -5388,21 +5376,21 @@
                         }
                     },
                     "gurobi": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "7.5.1 ": {
+                            "7.5.1": {
                                 "child": {},
                                 "module_name": "gurobi/v751",
                                 "path": "/opt/apps/nfs/module/modulefiles/gurobi/v751",
                                 "version_no": "7.5.1 "
                             },
-                            "8.0.1 ": {
+                            "8.0.1": {
                                 "child": {},
                                 "module_name": "gurobi/v801",
                                 "path": "/opt/apps/nfs/module/modulefiles/gurobi/v801",
                                 "version_no": "8.0.1 "
                             },
-                            "9.1.1 ": {
+                            "9.1.1": {
                                 "child": {},
                                 "module_name": "gurobi/v911",
                                 "path": "/opt/apps/nfs/module/modulefiles/gurobi/v911",
@@ -5422,7 +5410,7 @@
                             "18.0.3.222": {
                                 "child": {
                                     "EMBOSS": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "6.6.0": {
                                                 "child": {},
@@ -5433,7 +5421,7 @@
                                         }
                                     },
                                     "ImageMagick": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "7.0.7": {
                                                 "child": {},
@@ -5444,7 +5432,7 @@
                                         }
                                     },
                                     "R": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.5.0-intel": {
                                                 "child": {},
@@ -5455,7 +5443,7 @@
                                         }
                                     },
                                     "ViennaRNA": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.4.6": {
                                                 "child": {},
@@ -5466,7 +5454,7 @@
                                         }
                                     },
                                     "bamtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.5.1": {
                                                 "child": {},
@@ -5477,7 +5465,7 @@
                                         }
                                     },
                                     "bcftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.3.1": {
                                                 "child": {},
@@ -5488,7 +5476,7 @@
                                         }
                                     },
                                     "bedtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.27.1": {
                                                 "child": {},
@@ -5499,7 +5487,7 @@
                                         }
                                     },
                                     "bowtie2": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.3.4": {
                                                 "child": {},
@@ -5510,7 +5498,7 @@
                                         }
                                     },
                                     "bwa": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.7.17": {
                                                 "child": {},
@@ -5521,7 +5509,7 @@
                                         }
                                     },
                                     "clustalw": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.1": {
                                                 "child": {},
@@ -5532,7 +5520,7 @@
                                         }
                                     },
                                     "cmake": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.10.3": {
                                                 "child": {},
@@ -5543,7 +5531,7 @@
                                         }
                                     },
                                     "exonerate": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.0": {
                                                 "child": {},
@@ -5554,7 +5542,7 @@
                                         }
                                     },
                                     "gdal": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.3": {
                                                 "child": {},
@@ -5565,7 +5553,7 @@
                                         }
                                     },
                                     "geos": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.6.2": {
                                                 "child": {},
@@ -5576,7 +5564,7 @@
                                         }
                                     },
                                     "gnuplot": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "5.2.2": {
                                                 "child": {},
@@ -5587,7 +5575,7 @@
                                         }
                                     },
                                     "gsl": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.4": {
                                                 "child": {},
@@ -5598,7 +5586,7 @@
                                         }
                                     },
                                     "hdf5": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.8.20": {
                                                 "child": {},
@@ -5620,7 +5608,7 @@
                                             "2018.3.222": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -5631,7 +5619,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.66.0": {
                                                                 "child": {},
@@ -5648,7 +5636,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -5659,7 +5647,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -5670,7 +5658,7 @@
                                                         }
                                                     },
                                                     "mafft": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "7.402": {
                                                                 "child": {},
@@ -5681,7 +5669,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -5692,7 +5680,7 @@
                                                         }
                                                     },
                                                     "scalapack": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.2.0.2": {
                                                                 "child": {},
@@ -5716,7 +5704,7 @@
                                         }
                                     },
                                     "libgtextutils": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.7": {
                                                 "child": {},
@@ -5727,7 +5715,7 @@
                                         }
                                     },
                                     "libint": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.1.5": {
                                                 "child": {},
@@ -5738,7 +5726,7 @@
                                         }
                                     },
                                     "libxc": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.2.1": {
                                                 "child": {},
@@ -5749,7 +5737,7 @@
                                         }
                                     },
                                     "libxsmm": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.9": {
                                                 "child": {},
@@ -5771,7 +5759,7 @@
                                             "2.2": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -5782,7 +5770,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.66.0": {
                                                                 "child": {},
@@ -5799,7 +5787,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -5810,7 +5798,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -5821,7 +5809,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -5839,7 +5827,7 @@
                                         }
                                     },
                                     "ncl_ncarg": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "6.4.0": {
                                                 "child": {},
@@ -5850,7 +5838,7 @@
                                         }
                                     },
                                     "nco": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.7.3": {
                                                 "child": {},
@@ -5861,7 +5849,7 @@
                                         }
                                     },
                                     "netcdf-serial": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "4.1.3": {
                                                 "child": {},
@@ -5872,7 +5860,7 @@
                                         }
                                     },
                                     "ngs": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.9.0rc": {
                                                 "child": {},
@@ -5894,7 +5882,7 @@
                                             "1.10.7": {
                                                 "child": {
                                                     "abyss": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2.0.2": {
                                                                 "child": {},
@@ -5905,7 +5893,7 @@
                                                         }
                                                     },
                                                     "boost": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.63.0": {
                                                                 "child": {},
@@ -5922,7 +5910,7 @@
                                                         }
                                                     },
                                                     "elpa": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "2017.05.003": {
                                                                 "child": {},
@@ -5933,7 +5921,7 @@
                                                         }
                                                     },
                                                     "lammps": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "16Mar18": {
                                                                 "child": {},
@@ -5944,7 +5932,7 @@
                                                         }
                                                     },
                                                     "mafft": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "7.402": {
                                                                 "child": {},
@@ -5955,7 +5943,7 @@
                                                         }
                                                     },
                                                     "netcdf": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.4.4.1.1": {
                                                                 "child": {},
@@ -5972,7 +5960,7 @@
                                                         }
                                                     },
                                                     "nwchem": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             "6.8": {
                                                                 "child": {},
@@ -5983,7 +5971,7 @@
                                                         }
                                                     },
                                                     "phdf5": {
-                                                        "info": "",
+                                                        "info": "N/A",
                                                         "versions": {
                                                             ".version.1.10.1": {
                                                                 "child": {},
@@ -6007,7 +5995,7 @@
                                         }
                                     },
                                     "proj": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "5.0.1": {
                                                 "child": {},
@@ -6018,7 +6006,7 @@
                                         }
                                     },
                                     "python2": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.7.14": {
                                                 "child": {},
@@ -6029,7 +6017,7 @@
                                         }
                                     },
                                     "python3": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "3.6.4": {
                                                 "child": {},
@@ -6040,7 +6028,7 @@
                                         }
                                     },
                                     "rmblast": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.6.0": {
                                                 "child": {},
@@ -6051,7 +6039,7 @@
                                         }
                                     },
                                     "samtools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "1.3.1": {
                                                 "child": {},
@@ -6062,7 +6050,7 @@
                                         }
                                     },
                                     "sparsehash": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.0.3": {
                                                 "child": {},
@@ -6073,7 +6061,7 @@
                                         }
                                     },
                                     "udunits": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.2.26": {
                                                 "child": {},
@@ -6084,7 +6072,7 @@
                                         }
                                     },
                                     "vcftools": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.1.13": {
                                                 "child": {},
@@ -6095,7 +6083,7 @@
                                         }
                                     },
                                     "voro++": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "0.4.6": {
                                                 "child": {},
@@ -6106,7 +6094,7 @@
                                         }
                                     },
                                     "vsearch": {
-                                        "info": "",
+                                        "info": "N/A",
                                         "versions": {
                                             "2.3.0": {
                                                 "child": {},
@@ -6117,12 +6105,6 @@
                                         }
                                     }
                                 },
-                                "module_name": "",
-                                "path": "",
-                                "version_no": ""
-                            },
-                            "18.0.3.222 ": {
-                                "child": {},
                                 "module_name": "intel/18.0.3.222",
                                 "path": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222",
                                 "version_no": "18.0.3.222 "
@@ -6132,19 +6114,19 @@
                     "java": {
                         "info": "Blah Blah Blah ",
                         "versions": {
-                            "1.6.0 ": {
+                            "1.6.0": {
                                 "child": {},
                                 "module_name": "java/1.6.0",
                                 "path": "/opt/ohpc/pub/modulefiles/java/1.6.0",
                                 "version_no": "1.6.0 "
                             },
-                            "1.7.0 ": {
+                            "1.7.0": {
                                 "child": {},
                                 "module_name": "java/1.7.0",
                                 "path": "/opt/ohpc/pub/modulefiles/java/1.7.0",
                                 "version_no": "1.7.0 "
                             },
-                            "1.8.0 ": {
+                            "1.8.0": {
                                 "child": {},
                                 "module_name": "java/1.8.0",
                                 "path": "/opt/ohpc/pub/modulefiles/java/1.8.0",
@@ -6153,9 +6135,9 @@
                         }
                     },
                     "lumerical": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "2020a ": {
+                            "2020a": {
                                 "child": {},
                                 "module_name": "lumerical/2020a",
                                 "path": "/opt/apps/nfs/module/modulefiles/lumerical/2020a",
@@ -6164,15 +6146,15 @@
                         }
                     },
                     "matlab": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "R2019a ": {
+                            "R2019a": {
                                 "child": {},
                                 "module_name": "matlab/R2019a",
                                 "path": "/opt/apps/nfs/module/modulefiles/matlab/R2019a",
                                 "version_no": "R2019a "
                             },
-                            "R2020a ": {
+                            "R2020a": {
                                 "child": {},
                                 "module_name": "matlab/R2020a",
                                 "path": "/opt/apps/nfs/module/modulefiles/matlab/R2020a",
@@ -6181,9 +6163,9 @@
                         }
                     },
                     "orca": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "4.2.0 ": {
+                            "4.2.0": {
                                 "child": {},
                                 "module_name": "orca/4.2.0",
                                 "path": "/opt/apps/nfs/module/modulefiles/orca/4.2.0",
@@ -6194,7 +6176,7 @@
                     "perl": {
                         "info": "Perl Libararies and Modules in additiobn to the default system /bin/perl ",
                         "versions": {
-                            "5.16.3 ": {
+                            "5.16.3": {
                                 "child": {},
                                 "module_name": "perl/5.16.3",
                                 "path": "/opt/apps/nfs/module/modulefiles/perl/5.16.3",
@@ -6203,9 +6185,9 @@
                         }
                     },
                     "picard": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "2.0.1 ": {
+                            "2.0.1": {
                                 "child": {},
                                 "module_name": "picard/2.0.1",
                                 "path": "/opt/apps/nfs/module/modulefiles/picard/2.0.1",
@@ -6222,7 +6204,7 @@
                                 "path": "/opt/ohpc/pub/modulefiles/prun/.version.1.2",
                                 "version_no": ".version.1.2"
                             },
-                            "1.2 ": {
+                            "1.2": {
                                 "child": {},
                                 "module_name": "prun/1.2",
                                 "path": "/opt/ohpc/pub/modulefiles/prun/1.2",
@@ -6233,7 +6215,7 @@
                     "rosetta": {
                         "info": "The Rosetta software suite includes algorithms for computational modeling and analysis of protein structures. It has enabled notable scientific advances in computational biology, including de novo protein design, enzyme design, ligand docking, and structure prediction of biological macromolecules and macromolecular complexes.  ",
                         "versions": {
-                            "3.9 ": {
+                            "3.9": {
                                 "child": {},
                                 "module_name": "rosetta/3.9",
                                 "path": "/opt/apps/nfs/module/modulefiles/rosetta/3.9",
@@ -6244,7 +6226,7 @@
                     "singularity": {
                         "info": "Singularity provides functionality to build the smallest most minimal possible containers, and running those containers as single application environments ",
                         "versions": {
-                            "2.5.1 ": {
+                            "2.5.1": {
                                 "child": {},
                                 "module_name": "singularity/2.5.1",
                                 "path": "/opt/ohpc/pub/modulefiles/singularity/2.5.1",
@@ -6253,9 +6235,9 @@
                         }
                     },
                     "tcad": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "Q_2019.12 ": {
+                            "Q_2019.12": {
                                 "child": {},
                                 "module_name": "tcad/Q_2019.12",
                                 "path": "/opt/apps/nfs/module/modulefiles/tcad/Q_2019.12",
@@ -6264,9 +6246,9 @@
                         }
                     },
                     "totalview": {
-                        "info": "",
+                        "info": "N/A",
                         "versions": {
-                            "2021.1.16 ": {
+                            "2021.1.16": {
                                 "child": {},
                                 "module_name": "totalview/2021.1.16",
                                 "path": "/opt/apps/nfs/module/modulefiles/totalview/2021.1.16",
@@ -6277,13 +6259,13 @@
                     "vasp": {
                         "info": "Vienna Ab initio Simulation Package. Compiled using Intel Compilers. This installation has the standard, gamma-only, and non-collinear version of VASP, based on your needs you may use the command 'vasp_std', 'vasp_gam' or 'vasp_ncl'.  ",
                         "versions": {
-                            "5.3 ": {
+                            "5.3": {
                                 "child": {},
                                 "module_name": "vasp/5.3",
                                 "path": "/opt/apps/nfs/module/modulefiles/vasp/5.3",
                                 "version_no": "5.3 "
                             },
-                            "5.4.4 ": {
+                            "5.4.4": {
                                 "child": {},
                                 "module_name": "vasp/5.4.4",
                                 "path": "/opt/apps/nfs/module/modulefiles/vasp/5.4.4",
