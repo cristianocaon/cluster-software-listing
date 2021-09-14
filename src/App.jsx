@@ -11,6 +11,7 @@ import { Alert, AlertTitle } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
 import findPathsToKey from './util/findPathsToKey';
+import getFirstChild from './util/getFirstChild';
 
 import _ from 'lodash';
 
@@ -93,7 +94,7 @@ export default function App() {
 
   useEffect(() => {
     if (data) {
-      let { child } = data[partitionValue].versions['0.15.4'];
+      let child = getFirstChild(data, partitionValue);
       let keyPath = findPathsToKey({ obj: child, key: input });
       if (keyPath.length > 0) {
         keyPath = keyPath.map((path) => {
@@ -133,8 +134,9 @@ export default function App() {
   }, [data, input, partitionValue]);
 
   const handleHeaderChange = (event, newValue) => {
+    let tempPartition = partitions[newValue];
     setHeaderValue(newValue);
-    setPartitionValue(partitions[newValue]);
+    setPartitionValue(tempPartition);
   };
 
   const handleInfoChange = (newData, newLevel) => {
@@ -166,7 +168,7 @@ export default function App() {
   };
 
   const handlePathChange = (event) => {
-    let { child } = data[partitionValue].versions['0.15.4'];
+    let child = getFirstChild(data, partitionValue);
     let temp = event.target.innerText.split('/').join();
     temp = temp.split(' >>> ');
     temp = temp.map((child) => child.split(','));
@@ -269,7 +271,7 @@ export default function App() {
   }, [paths]);
 
   if (!error && data) {
-    let { child } = data[partitionValue].versions['0.15.4'];
+    let child = getFirstChild(data, partitionValue);
     if (loading) return <Loading />;
     return (
       <div className={classes.root}>
