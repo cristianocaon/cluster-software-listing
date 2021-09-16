@@ -8,40 +8,40 @@ import HelpIcon from '@material-ui/icons/Help';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-  root: {
-    position: 'static',
-    background: '#0a100d',
-    color: '#edf2f4',
-    alignItems: 'center',
-  },
+    root: {
+        position: 'static',
+        background: '#0a100d',
+        color: '#edf2f4',
+        alignItems: 'center',
+    },
 }));
 
 export default function Header({
-  value,
-  partitions,
-  onChange,
-  handleTutorialDisplay,
+    value,
+    partitions,
+    onChange,
+    handleTutorialDisplay,
 }) {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  if (partitions) {
-    return (
-      <AppBar className={classes.root}>
-        <Toolbar>
-          <Tabs value={value} onChange={onChange} centered>
-            {partitions.map((partition) => {
-              return <Tab label={partition} key={partition} />;
-            })}
-            <IconButton
-              color="inherit"
-              component="span"
-              onClick={handleTutorialDisplay}
-            >
-              <HelpIcon />
-            </IconButton>
-          </Tabs>
-        </Toolbar>
-      </AppBar>
-    );
-  } else return null;
+    if (partitions) {
+        return (
+            <AppBar className={classes.root}>
+                <Toolbar>
+                    <Tabs value={value} onChange={onChange} centered>
+                        {partitions.map((partition) => {
+                            return <Tab label={partition} key={partition} />;
+                        })}
+                        <IconButton
+                            color="inherit"
+                            component="span"
+                            onClick={handleTutorialDisplay}
+                        >
+                            <HelpIcon />
+                        </IconButton>
+                    </Tabs>
+                </Toolbar>
+            </AppBar>
+        );
+    } else return null;
 }
