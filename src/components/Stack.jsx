@@ -25,6 +25,7 @@ export default function Stack({
   pathCards,
   setPathCards,
   setPathSelected,
+  isTutorialDisplay,
 }) {
   const classes = useStyles();
 
@@ -34,6 +35,7 @@ export default function Stack({
   const [clicked, setClicked] = useState('');
   const [selected, setSelected] = useState([]);
   const [prevLevel, setPrevLevel] = useState(-1);
+  const [isTutorial, setIsTutorial] = useState(true);
 
   const cardsRef = useRef();
 
@@ -185,6 +187,21 @@ export default function Stack({
     }
   }, [pathSelected, pathCards]);
 
+  useEffect(() => {
+    if (isTutorialDisplay) {
+      let fields = Object.keys(data).map((key) => {
+        let info = data[key].info;
+        return [key, info, false, level];
+      });
+      setCards([fields]);
+      setIsTutorial(isTutorialDisplay);
+      setLevel(0);
+      setPrevLevel(-1);
+      setSelected([]);
+      setClicked('');
+    }
+  }, [isTutorialDisplay]);
+
   if (cards) {
     return (
       <div style={{ height: '55vh', overflowY: 'auto' }} ref={cardsRef}>
@@ -199,7 +216,9 @@ export default function Stack({
               onClick={handleClick}
               handleInfoChange={handleInfoChange}
             />
-            {clicked === '' && level === 0 && <TutorialBox clicked={clicked} />}
+            {clicked === '' && level === 0 && isTutorial && (
+              <TutorialBox clicked={clicked} />
+            )}
           </>
         ))}
       </div>

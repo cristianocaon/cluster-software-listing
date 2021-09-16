@@ -20,7 +20,7 @@ export default function Header({
   value,
   partitions,
   onChange,
-  handleInfoDisplay,
+  handleTutorialDisplay,
 }) {
   const classes = useStyles();
 
@@ -35,7 +35,7 @@ export default function Header({
             <IconButton
               color="inherit"
               component="span"
-              onClick={handleInfoDisplay}
+              onClick={handleTutorialDisplay}
             >
               <HelpIcon />
             </IconButton>
