@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import Grow from '@material-ui/core/Grow';
+import HelpIcon from '@material-ui/icons/Help';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,16 +29,18 @@ export default function TutorialBox({ clicked }) {
                     <ol>
                         <li>Select the target partition from the top menu.</li>
                         <ul>
-                            <li style={{ color: '#d90429' }}>
-                                For more details regarding each partition on the
-                                RedRaider cluster, click{' '}
-                                <a
-                                    href="https://www.depts.ttu.edu/hpcc/operations/equipment.php"
-                                    target="_blank"
-                                >
-                                    here
-                                </a>
-                                .
+                            <li>
+                                <span style={{ color: '#d90429' }}>
+                                    For more details regarding each partition on
+                                    the RedRaider cluster, click{' '}
+                                    <a
+                                        href="https://www.depts.ttu.edu/hpcc/operations/equipment.php"
+                                        target="_blank"
+                                    >
+                                        here
+                                    </a>
+                                    .
+                                </span>
                             </li>
                         </ul>
                         <li>
@@ -58,15 +61,17 @@ export default function TutorialBox({ clicked }) {
                                 The bottom-right box shows more details
                                 regarding the software modules.
                             </li>
-                            <li style={{ color: '#d90429' }}>
-                                For more info on how to use Modules, please
-                                refer to the{' '}
-                                <a
-                                    href="https://www.depts.ttu.edu/hpcc/userguides/general_guides/software_environment.php"
-                                    target="_blank"
-                                >
-                                    Software Environment Setup Guide
-                                </a>
+                            <li>
+                                <span style={{ color: '#d90429' }}>
+                                    For more info on how to use Modules, please
+                                    refer to the{' '}
+                                    <a
+                                        href="https://www.depts.ttu.edu/hpcc/userguides/general_guides/software_environment.php"
+                                        target="_blank"
+                                    >
+                                        Software Environment Setup Guide
+                                    </a>
+                                </span>
                             </li>
                         </ul>
                         <li>
@@ -109,6 +114,11 @@ export default function TutorialBox({ clicked }) {
                     web page and place your new software request. Please note
                     that HPCC policies and restrictions on software installation
                     described in this link apply to all new software requests.
+                    <p>
+                        To see these information again, click on the{' '}
+                        <HelpIcon style={{ fontSize: 'medium' }} /> button in
+                        the partition header at the top.
+                    </p>
                 </Typography>
             </Card>
         </Grow>
